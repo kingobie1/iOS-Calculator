@@ -15,6 +15,7 @@
 		E0D875C41CF4E1CE002CCCA6 /* iOS_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875C31CF4E1CE002CCCA6 /* iOS_CalculatorTests.swift */; };
 		E0D875CF1CF4EF4D002CCCA6 /* ArithmeticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875CE1CF4EF4D002CCCA6 /* ArithmeticButton.swift */; };
 		E0D875D11CF4EF9E002CCCA6 /* NumericalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875D01CF4EF9E002CCCA6 /* NumericalButton.swift */; };
+		E0D875D71CF52FCE002CCCA6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875D61CF52FCE002CCCA6 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		E0D875C51CF4E1CE002CCCA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0D875CE1CF4EF4D002CCCA6 /* ArithmeticButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticButton.swift; sourceTree = "<group>"; };
 		E0D875D01CF4EF9E002CCCA6 /* NumericalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericalButton.swift; sourceTree = "<group>"; };
+		E0D875D61CF52FCE002CCCA6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				E0D875B01CF4E1CE002CCCA6 /* ViewController.swift */,
 				E0D875B21CF4E1CE002CCCA6 /* Main.storyboard */,
 				E0D875D01CF4EF9E002CCCA6 /* NumericalButton.swift */,
+				E0D875D61CF52FCE002CCCA6 /* UIColorExtension.swift */,
 				E0D875CE1CF4EF4D002CCCA6 /* ArithmeticButton.swift */,
 				E0D875B51CF4E1CE002CCCA6 /* Assets.xcassets */,
 				E0D875B71CF4E1CE002CCCA6 /* LaunchScreen.storyboard */,
@@ -205,6 +208,7 @@
 			files = (
 				E0D875D11CF4EF9E002CCCA6 /* NumericalButton.swift in Sources */,
 				E0D875B11CF4E1CE002CCCA6 /* ViewController.swift in Sources */,
+				E0D875D71CF52FCE002CCCA6 /* UIColorExtension.swift in Sources */,
 				E0D875CF1CF4EF4D002CCCA6 /* ArithmeticButton.swift in Sources */,
 				E0D875AF1CF4E1CE002CCCA6 /* AppDelegate.swift in Sources */,
 			);

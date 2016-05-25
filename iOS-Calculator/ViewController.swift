@@ -12,15 +12,23 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     @IBOutlet weak var calculatorDisplay: UILabel!
+    @IBOutlet weak var equalsButton: UIButton!
     
     var isTypingNumber = false
+    var isFirstTime = true
     var firstNumber = 0.0
-    var secondNumber = 0.0
     var operation = ""
+    
+    let backgroundColor = UIColor.backgroundColor()
+    let textColor = UIColor.textColor()
+    let equalsButtonColor = UIColor.equalButtonColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.backgroundColor = backgroundColor
+        equalsButton.backgroundColor = equalsButtonColor
+        equalsButton.setTitleColor(textColor, forState: UIControlState.Normal)
     }
     
     // MARK: Actions
@@ -44,22 +52,36 @@ class ViewController: UIViewController {
     @IBAction func arithmeticTapped(sender: UIButton) {
         isTypingNumber = false
         
-        firstNumber = Double(calculatorDisplay.text!)!
-        
-        operation = sender.currentTitle!
+        if isFirstTime {
+            operation = sender.currentTitle!
+            firstNumber = Double(calculatorDisplay.text!)!
+            isFirstTime = false
+        } else {
+            calculate()
+            operation = sender.currentTitle!
+        }
     }
     
     @IBAction func clearTapped(sender: UIButton) {
         // Clear the calculator screen.
-        calculatorDisplay.text = ""
+        reset()
     }
     
 
     @IBAction func equalsTapped(sender: UIButton) {
         isTypingNumber = false
-        var results = 0.0
         
-        secondNumber = Double(calculatorDisplay.text!)!
+        calculate()
+        
+        isFirstTime = true
+        
+        calculatorDisplay.text = String(firstNumber)
+    }
+    
+    
+    func calculate() {
+        var results = 0.0
+        let secondNumber = Double(calculatorDisplay.text!)!
         
         switch operation {
         case "+":
@@ -74,7 +96,17 @@ class ViewController: UIViewController {
             break
         }
         
+        print(firstNumber, operation, secondNumber, " = ", results)
+        
         calculatorDisplay.text = String(results)
+        firstNumber = results
+    }
+    
+    func reset() {
+        calculatorDisplay.text = ""
+        isTypingNumber = false
+        isFirstTime = true
+        firstNumber = 0.0
     }
 }
 
