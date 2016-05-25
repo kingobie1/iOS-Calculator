@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
+    
     @IBOutlet weak var calculatorDisplay: UILabel!
     @IBOutlet weak var equalsButton: UIButton!
     
@@ -18,12 +19,12 @@ class ViewController: UIViewController {
     var isFirstTime = true
     var firstNumber = 0.0
     var operation = ""
-    
-    let backgroundColor = UIColor.backgroundColor()
-    let textColor = UIColor.textColor()
-    let equalsButtonColor = UIColor.equalButtonColor()
 
     override func viewDidLoad() {
+        let backgroundColor = UIColor.backgroundColor()
+        let textColor = UIColor.textColor()
+        let equalsButtonColor = UIColor.equalButtonColor()
+        
         super.viewDidLoad()
         
         self.view.backgroundColor = backgroundColor
@@ -31,10 +32,10 @@ class ViewController: UIViewController {
         equalsButton.setTitleColor(textColor, forState: UIControlState.Normal)
     }
     
+    
     // MARK: Actions
 
     @IBAction func numberTapped(sender: UIButton) {
-        
         // Get number from button.
         let number = sender.currentTitle
         
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func arithmeticTapped(sender: UIButton) {
+        // User has clicked an arathmetic button: (+ - x ÷).
         isTypingNumber = false
         
         if isFirstTime {
@@ -69,6 +71,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func equalsTapped(sender: UIButton) {
+        // User has clicked the equals button.
         isTypingNumber = false
         
         calculate()
@@ -77,6 +80,9 @@ class ViewController: UIViewController {
         
         calculatorDisplay.text = String(firstNumber)
     }
+    
+    
+    // MARK: Helper functions
     
     
     func calculate() {
