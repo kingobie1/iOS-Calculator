@@ -27,7 +27,9 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // Set colors:
         self.view.backgroundColor = backgroundColor
+        calculatorDisplay.textColor = textColor
         equalsButton.backgroundColor = equalsButtonColor
         equalsButton.setTitleColor(textColor, forState: UIControlState.Normal)
     }
