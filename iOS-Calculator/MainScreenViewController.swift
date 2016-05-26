@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainScreenViewController.swift
 //  iOS-Calculator
 //
 //  Created by Obatola Seward-Evans on 5/24/16.
@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         equalsButton.backgroundColor = equalsButtonColor
         equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)
         menuButton.backgroundColor = backgroundColor
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     

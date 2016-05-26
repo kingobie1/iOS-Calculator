@@ -507,6 +507,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMZ-nP-dzb" customClass="MenuButton" customModule="iOS_Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="MenuButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZMZ-nP-dzb" secondAttribute="height" multiplier="1:1" id="MV8-pE-Hb1"/>
                                 </constraints>
@@ -520,6 +521,9 @@
                                         <include reference="MV8-pE-Hb1"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="RDV-e1-vET" kind="presentation" identifier="toSettings" id="Zh6-hM-NgN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -633,6 +637,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-109.5" y="408.75"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="yr7-7j-Cw2">
+            <objects>
+                <viewController id="RDV-e1-vET" customClass="SettingsViewController" customModule="iOS_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FQO-uD-CXj"/>
+                        <viewControllerLayoutGuide type="bottom" id="biu-RO-oq5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ypK-JO-hNt">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZp-FK-hQ4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="iOS Calculator" id="lyR-yt-4Re">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Tbr-n0-w3x">
+                                            <connections>
+                                                <action selector="settingsModalDone:" destination="RDV-e1-vET" id="aYn-XA-s2m"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSZ-3N-BF8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fZp-FK-hQ4" secondAttribute="trailing" id="8Fb-Du-pu6"/>
+                            <constraint firstItem="fZp-FK-hQ4" firstAttribute="leading" secondItem="ypK-JO-hNt" secondAttribute="leading" id="8X6-tM-FAI"/>
+                            <constraint firstItem="BSZ-3N-BF8" firstAttribute="bottom" secondItem="fZp-FK-hQ4" secondAttribute="top" id="bXs-i4-KQe"/>
+                            <constraint firstItem="BSZ-3N-BF8" firstAttribute="leading" secondItem="fZp-FK-hQ4" secondAttribute="leading" id="c01-2X-34f"/>
+                            <constraint firstItem="BSZ-3N-BF8" firstAttribute="trailing" secondItem="fZp-FK-hQ4" secondAttribute="trailing" id="erZ-Ne-21z"/>
+                            <constraint firstItem="BSZ-3N-BF8" firstAttribute="top" secondItem="ypK-JO-hNt" secondAttribute="top" id="gzI-do-VqO"/>
+                            <constraint firstItem="fZp-FK-hQ4" firstAttribute="top" secondItem="FQO-uD-CXj" secondAttribute="bottom" id="xO9-1f-vSj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fZp-FK-hQ4"/>
+                                <exclude reference="BSZ-3N-BF8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="bXs-i4-KQe"/>
+                                <exclude reference="c01-2X-34f"/>
+                                <exclude reference="erZ-Ne-21z"/>
+                                <exclude reference="gzI-do-VqO"/>
+                                <exclude reference="8Fb-Du-pu6"/>
+                                <exclude reference="8X6-tM-FAI"/>
+                                <exclude reference="xO9-1f-vSj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fZp-FK-hQ4"/>
+                                <include reference="BSZ-3N-BF8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="bXs-i4-KQe"/>
+                                <include reference="c01-2X-34f"/>
+                                <include reference="erZ-Ne-21z"/>
+                                <include reference="gzI-do-VqO"/>
+                                <include reference="8Fb-Du-pu6"/>
+                                <include reference="8X6-tM-FAI"/>
+                                <include reference="xO9-1f-vSj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="fZp-FK-hQ4" id="ikB-ci-XxR"/>
+                        <outlet property="statusBarBlock" destination="BSZ-3N-BF8" id="Va3-cK-sTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bA-ON-gEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="408.75"/>
         </scene>
     </scenes>
 </document>
