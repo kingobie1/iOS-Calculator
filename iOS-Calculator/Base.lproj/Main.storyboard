@@ -28,7 +28,7 @@
                                     <rect key="frame" x="206" y="181" width="144" height="21"/>
                                 </variation>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="u4T-yx-pI9">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="u4T-yx-pI9" userLabel="Row 1">
                                 <rect key="frame" x="108" y="306" width="184" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="437-6Z-Nw8" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -122,7 +122,7 @@
                                     <rect key="frame" x="108" y="306" width="129" height="30"/>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2Uu-Ex-Mcy">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2Uu-Ex-Mcy" userLabel="Row 2">
                                 <rect key="frame" x="108" y="344" width="184" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-cI-Vc0" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -222,7 +222,7 @@
                                     <rect key="frame" x="108" y="344" width="129" height="30"/>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-rZ-SdJ">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-rZ-SdJ" userLabel="Row 3">
                                 <rect key="frame" x="108" y="382" width="184" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To4-XB-5Lp" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -322,7 +322,7 @@
                                     <rect key="frame" x="108" y="382" width="129" height="30"/>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-XW-3Sz">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-XW-3Sz" userLabel="Row 4">
                                 <rect key="frame" x="108" y="420" width="184" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-Ok-dEG" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -422,7 +422,7 @@
                                     <rect key="frame" x="108" y="420" width="129" height="30"/>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-gp-mWU">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-gp-mWU" userLabel="Row 5">
                                 <rect key="frame" x="108" y="458" width="176" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hij-gk-S2C" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
