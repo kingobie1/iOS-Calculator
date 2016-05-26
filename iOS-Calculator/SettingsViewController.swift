@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var statusBarBlock: UIView!
     
+    var colorManager = ColorManager.sharedInstance
+    
     override func viewDidLoad() {
         let backgroundColor = UIColor.numericButtonColor()
         let statusBlockColor = UIColor(netHex: 0x151515)

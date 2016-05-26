@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalsButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
+    var colorManager = ColorManager.sharedInstance
     var isTypingNumber = false
     var isFirstTime = true
     var firstNumber = 0.0
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
         let equalsButtonColor = UIColor.equalButtonColor()
         
         super.viewDidLoad()
+        
+        
         
         // Set colors:
         self.view.backgroundColor = backgroundColor

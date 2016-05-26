@@ -16,12 +16,6 @@ class MenuButton: UIButton {
         
         let ctx : CGContextRef = UIGraphicsGetCurrentContext()!
         
-//        CGContextBeginPath(ctx)
-//        CGContextMoveToPoint(ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect))
-//        CGContextAddLineToPoint(ctx, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-//        CGContextAddLineToPoint(ctx, (CGRectGetMaxX(rect)/2.0), CGRectGetMinY(rect))
-//        CGContextClosePath(ctx)
-        
         CGContextBeginPath(ctx)
         CGContextMoveToPoint(ctx, CGRectGetMinX(rect), CGRectGetMinY(rect))
         CGContextAddLineToPoint(ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect))

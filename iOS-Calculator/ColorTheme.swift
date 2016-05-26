@@ -11,3 +11,7 @@ import UIKit
 enum ColorTheme {
     case Light, Dark
 }
+
+enum ColorType {
+    case Background, Button
+}
