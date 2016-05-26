@@ -505,16 +505,34 @@
                                     <action selector="equalsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTL-Q7-FJx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMZ-nP-dzb" customClass="MenuButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZMZ-nP-dzb" secondAttribute="height" multiplier="1:1" id="MV8-pE-Hb1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MV8-pE-Hb1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="MV8-pE-Hb1"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qRg-iS-mfl" secondAttribute="trailing" id="09l-Sp-IKw"/>
+                            <constraint firstItem="ZMZ-nP-dzb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="2" id="4Lz-PZ-5iG"/>
                             <constraint firstItem="437-6Z-Nw8" firstAttribute="top" secondItem="dzv-t9-xN1" secondAttribute="bottom" constant="14" id="5FU-Cq-g07">
                                 <variation key="heightClass=regular-widthClass=compact" constant="3"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="dzv-t9-xN1" secondAttribute="trailing" id="7Ej-37-kuP"/>
                             <constraint firstItem="u4T-yx-pI9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9tM-kN-myy"/>
                             <constraint firstItem="VsO-XW-3Sz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FVY-5n-OZt"/>
+                            <constraint firstItem="ZMZ-nP-dzb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="JsM-3f-gG0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aUp-gp-mWU" secondAttribute="bottom" constant="22" id="MYJ-4T-DmC"/>
                             <constraint firstItem="QA7-rZ-SdJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mtz-Db-7g4"/>
                             <constraint firstItem="To4-XB-5Lp" firstAttribute="top" secondItem="2Uu-Ex-Mcy" secondAttribute="bottom" constant="8" id="NRg-hc-1rR">
@@ -544,12 +562,11 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="qRg-iS-mfl"/>
+                                <exclude reference="ZMZ-nP-dzb"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="09l-Sp-IKw"/>
-                                <exclude reference="Pof-2j-45n"/>
-                                <exclude reference="W7b-wq-1Xh"/>
-                                <exclude reference="y9w-K6-4ul"/>
+                                <exclude reference="4Lz-PZ-5iG"/>
+                                <exclude reference="JsM-3f-gG0"/>
                                 <exclude reference="7Ej-37-kuP"/>
                                 <exclude reference="jAM-ZU-Qgo"/>
                                 <exclude reference="5FU-Cq-g07"/>
@@ -566,6 +583,10 @@
                                 <exclude reference="VFn-cC-bQL"/>
                                 <exclude reference="dmz-WT-p9T"/>
                                 <exclude reference="jn0-TN-C6Y"/>
+                                <exclude reference="09l-Sp-IKw"/>
+                                <exclude reference="Pof-2j-45n"/>
+                                <exclude reference="W7b-wq-1Xh"/>
+                                <exclude reference="y9w-K6-4ul"/>
                                 <exclude reference="MYJ-4T-DmC"/>
                                 <exclude reference="nFm-My-NOv"/>
                             </mask>
@@ -573,12 +594,11 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="qRg-iS-mfl"/>
+                                <include reference="ZMZ-nP-dzb"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="09l-Sp-IKw"/>
-                                <include reference="Pof-2j-45n"/>
-                                <include reference="W7b-wq-1Xh"/>
-                                <include reference="y9w-K6-4ul"/>
+                                <include reference="4Lz-PZ-5iG"/>
+                                <include reference="JsM-3f-gG0"/>
                                 <include reference="7Ej-37-kuP"/>
                                 <include reference="jAM-ZU-Qgo"/>
                                 <include reference="5FU-Cq-g07"/>
@@ -595,6 +615,10 @@
                                 <include reference="VFn-cC-bQL"/>
                                 <include reference="dmz-WT-p9T"/>
                                 <include reference="jn0-TN-C6Y"/>
+                                <include reference="09l-Sp-IKw"/>
+                                <include reference="Pof-2j-45n"/>
+                                <include reference="W7b-wq-1Xh"/>
+                                <include reference="y9w-K6-4ul"/>
                                 <include reference="MYJ-4T-DmC"/>
                                 <include reference="nFm-My-NOv"/>
                             </mask>
@@ -603,11 +627,12 @@
                     <connections>
                         <outlet property="calculatorDisplay" destination="dzv-t9-xN1" id="MxY-rp-fZP"/>
                         <outlet property="equalsButton" destination="qRg-iS-mfl" id="XgY-Ng-L8g"/>
+                        <outlet property="menuButton" destination="ZMZ-nP-dzb" id="0v3-Ja-jHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="408.75"/>
+            <point key="canvasLocation" x="-109.5" y="408.75"/>
         </scene>
     </scenes>
 </document>

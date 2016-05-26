@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var calculatorDisplay: UILabel!
     @IBOutlet weak var equalsButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     var isTypingNumber = false
     var isFirstTime = true
@@ -31,7 +32,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = backgroundColor
         calculatorDisplay.textColor = textColor
         equalsButton.backgroundColor = equalsButtonColor
-        equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)        
+        equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)
+        menuButton.backgroundColor = backgroundColor
     }
     
     
