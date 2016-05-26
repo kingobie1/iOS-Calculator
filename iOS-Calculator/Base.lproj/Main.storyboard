@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,256 +21,560 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-t9-xN1">
                                 <rect key="frame" x="20" y="28" width="144" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="206" y="181" width="144" height="21"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="291" width="144" height="21"/>
-                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-4H-914" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="134" y="63" width="30" height="30"/>
-                                <state key="normal" title="÷"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="320" y="216" width="30" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="u4T-yx-pI9">
+                                <rect key="frame" x="108" y="306" width="184" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="437-6Z-Nw8" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="437-6Z-Nw8" secondAttribute="height" multiplier="1:1" id="fgP-Xn-Wag"/>
+                                        </constraints>
+                                        <state key="normal" title="AC"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fgP-Xn-Wag"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="fgP-Xn-Wag"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wVC-zP-RM0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-3V-lc7" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Wic-3V-lc7" secondAttribute="height" multiplier="1:1" id="7vE-Fr-vv6"/>
+                                        </constraints>
+                                        <state key="normal" title="("/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7vE-Fr-vv6"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="7vE-Fr-vv6"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="33" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dZ-OA-kgG" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="96" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="3dZ-OA-kgG" secondAttribute="height" multiplier="1:1" id="CSK-Tc-Ehx"/>
+                                        </constraints>
+                                        <state key="normal" title=")"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="CSK-Tc-Ehx"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="CSK-Tc-Ehx"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="66" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-4H-914" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JEa-4H-914" secondAttribute="height" multiplier="1:1" id="SqY-4c-ZNk"/>
+                                        </constraints>
+                                        <state key="normal" title="÷"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="SqY-4c-ZNk"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="SqY-4c-ZNk"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="99" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TUF-71-hp6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="306" width="129" height="30"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="326" width="30" height="30"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2Uu-Ex-Mcy">
+                                <rect key="frame" x="108" y="344" width="184" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-cI-Vc0" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ue4-cI-Vc0" secondAttribute="height" multiplier="1:1" id="lwH-N8-ysb"/>
+                                        </constraints>
+                                        <state key="normal" title="7"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lwH-N8-ysb"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="lwH-N8-ysb"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8K7-8b-ei9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhk-0b-Y5Y" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zhk-0b-Y5Y" secondAttribute="height" multiplier="1:1" id="t56-CJ-3dJ"/>
+                                        </constraints>
+                                        <state key="normal" title="8"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="t56-CJ-3dJ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="t56-CJ-3dJ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="33" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TiE-9A-2qO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9O-U6-aPC" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="96" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="x9O-U6-aPC" secondAttribute="height" multiplier="1:1" id="Fln-Wn-jBO"/>
+                                        </constraints>
+                                        <state key="normal" title="9"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Fln-Wn-jBO"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Fln-Wn-jBO"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="66" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyz-Ll-qtN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsk-jN-IKd" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Wsk-jN-IKd" secondAttribute="height" multiplier="1:1" id="fFq-Hd-18S"/>
+                                        </constraints>
+                                        <state key="normal" title="x"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fFq-Hd-18S"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="fFq-Hd-18S"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="99" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8b-r3-sAf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="344" width="129" height="30"/>
                                 </variation>
-                                <connections>
-                                    <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TUF-71-hp6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="437-6Z-Nw8" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="63" width="30" height="30"/>
-                                <state key="normal" title="AC"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="206" y="216" width="30" height="30"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-rZ-SdJ">
+                                <rect key="frame" x="108" y="382" width="184" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To4-XB-5Lp" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="To4-XB-5Lp" secondAttribute="height" multiplier="1:1" id="Jxq-AA-x3U"/>
+                                        </constraints>
+                                        <state key="normal" title="4"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Jxq-AA-x3U"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Jxq-AA-x3U"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vFk-QA-3es"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-Ck-UfL" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ihM-Ck-UfL" secondAttribute="height" multiplier="1:1" id="9cm-q8-15F"/>
+                                        </constraints>
+                                        <state key="normal" title="5"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9cm-q8-15F"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="9cm-q8-15F"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="33" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWZ-mj-zsU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-MS-mbq" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="96" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7DS-MS-mbq" secondAttribute="height" multiplier="1:1" id="m3V-xU-xyB"/>
+                                        </constraints>
+                                        <state key="normal" title="6"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="m3V-xU-xyB"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="m3V-xU-xyB"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="66" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXS-1G-K4G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-af-F2r" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9EU-af-F2r" secondAttribute="height" multiplier="1:1" id="02j-Kb-ihZ"/>
+                                        </constraints>
+                                        <state key="normal" title="-"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="02j-Kb-ihZ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="02j-Kb-ihZ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="99" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpl-dH-hqf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="382" width="129" height="30"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="326" width="30" height="30"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-XW-3Sz">
+                                <rect key="frame" x="108" y="420" width="184" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-Ok-dEG" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6YU-Ok-dEG" secondAttribute="height" multiplier="1:1" id="jF9-ec-VXu"/>
+                                        </constraints>
+                                        <state key="normal" title="1"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jF9-ec-VXu"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="jF9-ec-VXu"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDD-eN-Ehf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlY-n9-6q6" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FlY-n9-6q6" secondAttribute="height" multiplier="1:1" id="LdV-ZW-cpA"/>
+                                        </constraints>
+                                        <state key="normal" title="2"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="LdV-ZW-cpA"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="LdV-ZW-cpA"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="33" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5T-1z-Jlf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-2T-7q4" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="96" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="VaY-2T-7q4" secondAttribute="height" multiplier="1:1" id="qO8-MY-ukq"/>
+                                        </constraints>
+                                        <state key="normal" title="3"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qO8-MY-ukq"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="qO8-MY-ukq"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="66" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egO-Wq-bwO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cni-rO-y0k" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cni-rO-y0k" secondAttribute="height" multiplier="1:1" id="zAq-M3-FJh"/>
+                                        </constraints>
+                                        <state key="normal" title="+"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="zAq-M3-FJh"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="zAq-M3-FJh"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="99" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dt-VB-Dd7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="420" width="129" height="30"/>
                                 </variation>
-                                <connections>
-                                    <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wVC-zP-RM0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-3V-lc7" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="58" y="63" width="30" height="30"/>
-                                <state key="normal" title="("/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="244" y="216" width="30" height="30"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-gp-mWU">
+                                <rect key="frame" x="108" y="458" width="176" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hij-gk-S2C" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hij-gk-S2C" secondAttribute="height" multiplier="1:1" id="Bow-Ml-pAc"/>
+                                        </constraints>
+                                        <state key="normal" title="."/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Bow-Ml-pAc"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Bow-Ml-pAc"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-EV-I3J" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hsV-EV-I3J" secondAttribute="height" multiplier="1:1" id="OMr-zW-xGm"/>
+                                        </constraints>
+                                        <state key="normal" title="0"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="OMr-zW-xGm"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="OMr-zW-xGm"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="33" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6X-11-biw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRg-iS-mfl">
+                                        <rect key="frame" x="96" y="20" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qRg-iS-mfl" secondAttribute="height" multiplier="2:1" id="B0d-SS-yIG"/>
+                                        </constraints>
+                                        <state key="normal" title="="/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="B0d-SS-yIG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="B0d-SS-yIG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="66" y="0.0" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="equalsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTL-Q7-FJx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="458" width="96" height="30"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="326" width="30" height="30"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dZ-OA-kgG" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="96" y="63" width="30" height="30"/>
-                                <state key="normal" title=")"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="282" y="216" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="204" y="326" width="30" height="30"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-cI-Vc0" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="101" width="30" height="30"/>
-                                <state key="normal" title="7"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="206" y="254" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="364" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8K7-8b-ei9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhk-0b-Y5Y" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="58" y="101" width="30" height="30"/>
-                                <state key="normal" title="8"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="244" y="254" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="364" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TiE-9A-2qO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9O-U6-aPC" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="96" y="101" width="30" height="30"/>
-                                <state key="normal" title="9"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="282" y="254" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="204" y="364" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyz-Ll-qtN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsk-jN-IKd" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="134" y="101" width="30" height="30"/>
-                                <state key="normal" title="x"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="320" y="254" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="364" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8b-r3-sAf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To4-XB-5Lp" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="139" width="30" height="30"/>
-                                <state key="normal" title="4"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="206" y="292" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="402" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vFk-QA-3es"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-Ck-UfL" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="58" y="139" width="30" height="30"/>
-                                <state key="normal" title="5"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="244" y="292" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="402" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWZ-mj-zsU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-MS-mbq" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="96" y="139" width="30" height="30"/>
-                                <state key="normal" title="6"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="282" y="292" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="204" y="402" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXS-1G-K4G"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-af-F2r" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="134" y="139" width="30" height="30"/>
-                                <state key="normal" title="-"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="320" y="292" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="402" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpl-dH-hqf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-Ok-dEG" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="177" width="30" height="30"/>
-                                <state key="normal" title="1"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="206" y="330" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="440" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDD-eN-Ehf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlY-n9-6q6" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="58" y="177" width="30" height="30"/>
-                                <state key="normal" title="2"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="244" y="330" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="440" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5T-1z-Jlf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-2T-7q4" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="96" y="177" width="30" height="30"/>
-                                <state key="normal" title="3"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="282" y="330" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="204" y="440" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egO-Wq-bwO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cni-rO-y0k" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="134" y="177" width="30" height="30"/>
-                                <state key="normal" title="+"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="320" y="330" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="440" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dt-VB-Dd7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRg-iS-mfl">
-                                <rect key="frame" x="96" y="215" width="68" height="30"/>
-                                <state key="normal" title="="/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="282" y="368" width="68" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="204" y="478" width="68" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="equalsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTL-Q7-FJx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-EV-I3J" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="58" y="215" width="30" height="30"/>
-                                <state key="normal" title="0"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="244" y="368" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="478" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6X-11-biw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hij-gk-S2C" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="215" width="30" height="30"/>
-                                <state key="normal" title="."/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="206" y="368" width="30" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="478" width="30" height="30"/>
-                                </variation>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="437-6Z-Nw8" firstAttribute="top" secondItem="dzv-t9-xN1" secondAttribute="bottom" constant="14" id="5FU-Cq-g07">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="dzv-t9-xN1" secondAttribute="trailing" id="7Ej-37-kuP"/>
+                            <constraint firstItem="dzv-t9-xN1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7eG-eV-9NB"/>
+                            <constraint firstItem="u4T-yx-pI9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9tM-kN-myy"/>
+                            <constraint firstItem="aUp-gp-mWU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="D3q-1i-KUx"/>
+                            <constraint firstItem="VsO-XW-3Sz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FVY-5n-OZt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aUp-gp-mWU" secondAttribute="bottom" id="MYJ-4T-DmC"/>
+                            <constraint firstItem="QA7-rZ-SdJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mtz-Db-7g4"/>
+                            <constraint firstItem="To4-XB-5Lp" firstAttribute="top" secondItem="2Uu-Ex-Mcy" secondAttribute="bottom" constant="8" id="NRg-hc-1rR">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="Ue4-cI-Vc0" firstAttribute="top" secondItem="u4T-yx-pI9" secondAttribute="bottom" constant="8" id="UbC-4K-SLo">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="VsO-XW-3Sz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VFn-cC-bQL"/>
+                            <constraint firstItem="2Uu-Ex-Mcy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dCr-oc-7QO"/>
+                            <constraint firstItem="u4T-yx-pI9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dES-dT-pHS"/>
+                            <constraint firstItem="dzv-t9-xN1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="0.5" id="jAM-ZU-Qgo"/>
+                            <constraint firstItem="QA7-rZ-SdJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jgL-Ba-yCd"/>
+                            <constraint firstItem="hij-gk-S2C" firstAttribute="top" secondItem="VsO-XW-3Sz" secondAttribute="bottom" constant="8" id="jn0-TN-C6Y">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="2Uu-Ex-Mcy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="mJm-rx-opa"/>
+                            <constraint firstItem="6YU-Ok-dEG" firstAttribute="top" secondItem="QA7-rZ-SdJ" secondAttribute="bottom" constant="8" id="y8c-7i-94t">
+                                <variation key="heightClass=regular-widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="aUp-gp-mWU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOb-vz-XxI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Ej-37-kuP"/>
+                                <exclude reference="7eG-eV-9NB"/>
+                                <exclude reference="jAM-ZU-Qgo"/>
+                                <exclude reference="5FU-Cq-g07"/>
+                                <exclude reference="9tM-kN-myy"/>
+                                <exclude reference="dES-dT-pHS"/>
+                                <exclude reference="dCr-oc-7QO"/>
+                                <exclude reference="mJm-rx-opa"/>
+                                <exclude reference="UbC-4K-SLo"/>
+                                <exclude reference="Mtz-Db-7g4"/>
+                                <exclude reference="jgL-Ba-yCd"/>
+                                <exclude reference="NRg-hc-1rR"/>
+                                <exclude reference="y8c-7i-94t"/>
+                                <exclude reference="FVY-5n-OZt"/>
+                                <exclude reference="VFn-cC-bQL"/>
+                                <exclude reference="D3q-1i-KUx"/>
+                                <exclude reference="zOb-vz-XxI"/>
+                                <exclude reference="jn0-TN-C6Y"/>
+                                <exclude reference="MYJ-4T-DmC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="7Ej-37-kuP"/>
+                                <include reference="7eG-eV-9NB"/>
+                                <include reference="jAM-ZU-Qgo"/>
+                                <include reference="5FU-Cq-g07"/>
+                                <include reference="9tM-kN-myy"/>
+                                <include reference="dES-dT-pHS"/>
+                                <include reference="dCr-oc-7QO"/>
+                                <include reference="mJm-rx-opa"/>
+                                <include reference="UbC-4K-SLo"/>
+                                <include reference="Mtz-Db-7g4"/>
+                                <include reference="jgL-Ba-yCd"/>
+                                <include reference="NRg-hc-1rR"/>
+                                <include reference="y8c-7i-94t"/>
+                                <include reference="FVY-5n-OZt"/>
+                                <include reference="VFn-cC-bQL"/>
+                                <include reference="D3q-1i-KUx"/>
+                                <include reference="zOb-vz-XxI"/>
+                                <include reference="jn0-TN-C6Y"/>
+                                <include reference="MYJ-4T-DmC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="calculatorDisplay" destination="dzv-t9-xN1" id="MxY-rp-fZP"/>
