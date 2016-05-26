@@ -29,10 +29,6 @@ class ViewController: UIViewController {
         
         // Set colors:
         self.view.backgroundColor = backgroundColor
-<<<<<<< HEAD
-=======
-        
->>>>>>> Correct-UI-Size
         calculatorDisplay.textColor = textColor
         equalsButton.backgroundColor = equalsButtonColor
         equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)        
