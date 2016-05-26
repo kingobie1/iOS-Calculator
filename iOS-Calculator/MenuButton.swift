@@ -9,6 +9,9 @@
 import UIKit
 
 class MenuButton: UIButton {
+    
+    // Mark: Properties
+    var colorManager = ColorManager.sharedInstance
 
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -22,8 +25,7 @@ class MenuButton: UIButton {
         CGContextAddLineToPoint(ctx, (CGRectGetMaxX(rect)), CGRectGetMinY(rect))
         CGContextClosePath(ctx)
         
-        UIColor.equalButtonColor().setFill()
-//        CGContextSetRGBFillColor(ctx, 1.0, 0.5, 0.0, 0.60);
+        colorManager.getColor(ColorType.EqualButton).setFill()
         
         CGContextFillPath(ctx);
         // Drawing code

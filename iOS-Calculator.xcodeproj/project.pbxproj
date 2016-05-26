@@ -10,7 +10,7 @@
 		E0369DFA1CF75E5600D752C3 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369DF91CF75E5600D752C3 /* MenuButton.swift */; };
 		E0369DFC1CF766DC00D752C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */; };
 		E0369E021CF77D2600D752C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E011CF77D2600D752C3 /* Settings.swift */; };
-		E0369E081CF77E6000D752C3 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E071CF77E6000D752C3 /* ColorTheme.swift */; };
+		E0369E081CF77E6000D752C3 /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E071CF77E6000D752C3 /* ColorDetails.swift */; };
 		E064BCFF1CF7B5D3008D7E70 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */; };
 		E0D875AF1CF4E1CE002CCCA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875AE1CF4E1CE002CCCA6 /* AppDelegate.swift */; };
 		E0D875B11CF4E1CE002CCCA6 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875B01CF4E1CE002CCCA6 /* MainScreenViewController.swift */; };
@@ -37,7 +37,7 @@
 		E0369DF91CF75E5600D752C3 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E0369E011CF77D2600D752C3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		E0369E071CF77E6000D752C3 /* ColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		E0369E071CF77E6000D752C3 /* ColorDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
 		E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		E0D875AB1CF4E1CE002CCCA6 /* iOS-Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D875AE1CF4E1CE002CCCA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */,
-				E0369E071CF77E6000D752C3 /* ColorTheme.swift */,
+				E0369E071CF77E6000D752C3 /* ColorDetails.swift */,
 				E0D875D61CF52FCE002CCCA6 /* UIColorExtension.swift */,
 			);
 			name = Utilities;
@@ -254,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0369E081CF77E6000D752C3 /* ColorTheme.swift in Sources */,
+				E0369E081CF77E6000D752C3 /* ColorDetails.swift in Sources */,
 				E064BCFF1CF7B5D3008D7E70 /* ColorManager.swift in Sources */,
 				E0D875D11CF4EF9E002CCCA6 /* NumericalButton.swift in Sources */,
 				E0D875B11CF4E1CE002CCCA6 /* MainScreenViewController.swift in Sources */,

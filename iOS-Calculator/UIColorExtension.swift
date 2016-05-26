@@ -20,26 +20,4 @@ extension UIColor {
     convenience init(netHex:Int) {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
-    
-    class func numericButtonColor() -> UIColor {
-        return UIColor(netHex:0x2b2b2b)
-    }
-    
-    class func arithmeticButtonColor() -> UIColor {
-        return UIColor(netHex:0x1e1e1e)
-    }
-    
-    class func textColor() -> UIColor {
-        return UIColor(netHex: 0xede8ec)
-    }
-    
-    class func backgroundColor() -> UIColor {
-        return UIColor(netHex:0x050505)
-    }
-    
-    class func equalButtonColor() -> UIColor {
-        return UIColor(netHex:0xc0392b)
-    }
-    
-
 }

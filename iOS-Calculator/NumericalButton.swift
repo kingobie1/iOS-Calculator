@@ -9,6 +9,9 @@
 import UIKit
 
 class NumericalButton: UIButton {
+    
+    // Mark: Properties
+    var colorManager = ColorManager.sharedInstance
     let screenSize: CGRect = UIScreen.mainScreen().bounds
 
     
@@ -17,8 +20,8 @@ class NumericalButton: UIButton {
     override func drawRect(rect: CGRect) {
         let squareDimension: CGFloat = screenSize.width / 4
         
-        let buttonColor = UIColor.numericButtonColor()
-        let textColor = UIColor.textColor()
+        let buttonColor = colorManager.getColor(ColorType.NumericalButton)
+        let textColor = colorManager.getColor(ColorType.Text)
         
 //        var path = UIBezierPath(ovalInRect: rect)
         let path = UIBezierPath(rect: CGRectMake(0,0,squareDimension,squareDimension))

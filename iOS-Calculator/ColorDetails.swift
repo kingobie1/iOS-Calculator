@@ -1,5 +1,5 @@
 //
-//  ColorTheme.swift
+//  ColorDetails.swift
 //  iOS-Calculator
 //
 //  Created by Obatola Seward-Evans on 5/26/16.
@@ -13,5 +13,5 @@ enum ColorTheme {
 }
 
 enum ColorType {
-    case Background, Button
+    case Background, NumericalButton, ArithmeticButton, Text, EqualButton, Default, StatusBarBlock
 }

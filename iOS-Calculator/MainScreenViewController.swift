@@ -17,15 +17,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     
     var colorManager = ColorManager.sharedInstance
+    
     var isTypingNumber = false
     var isFirstTime = true
     var firstNumber = 0.0
     var operation = ""
 
     override func viewDidLoad() {
-        let backgroundColor = UIColor.backgroundColor()
-        let textColor = UIColor.textColor()
-        let equalsButtonColor = UIColor.equalButtonColor()
+        let backgroundColor = colorManager.getColor(ColorType.Background)
+        let textColor = colorManager.getColor(ColorType.Text)
+        let equalsButtonColor = colorManager.getColor(ColorType.EqualButton)
         
         super.viewDidLoad()
         

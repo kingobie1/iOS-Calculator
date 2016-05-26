@@ -18,17 +18,17 @@ class SettingsViewController: UIViewController {
     var colorManager = ColorManager.sharedInstance
     
     override func viewDidLoad() {
-        let backgroundColor = UIColor.numericButtonColor()
-        let statusBlockColor = UIColor(netHex: 0x151515)
-        let navColor = UIColor.blackColor()
-        let textColor = UIColor.textColor()
+        let backgroundColor = colorManager.getColor(ColorType.Background)
+        let statusBlockColor = colorManager.getColor(ColorType.StatusBarBlock)
+        let navColor = colorManager.getColor(ColorType.Default)
+        let textColor = colorManager.getColor(ColorType.Text)
         
         super.viewDidLoad()
 
         statusBarBlock.backgroundColor = statusBlockColor
         navBar.tintColor = textColor
         navBar.barTintColor = navColor
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.textColor()]
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
         self.view.backgroundColor = backgroundColor
     }
 

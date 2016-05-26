@@ -10,6 +10,8 @@ import UIKit
 
 class ArithmeticButton: UIButton {
 
+    // Mark: Properties
+    var colorManager = ColorManager.sharedInstance
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     
     
@@ -18,8 +20,8 @@ class ArithmeticButton: UIButton {
     override func drawRect(rect: CGRect) {
         let squareDimension: CGFloat = screenSize.width / 4
         
-        let buttonColor = UIColor.arithmeticButtonColor()
-        let textColor = UIColor.textColor()
+        let buttonColor = colorManager.getColor(ColorType.ArithmeticButton)
+        let textColor = colorManager.getColor(ColorType.Text)
         
         let path = UIBezierPath(rect: CGRectMake(0,0,squareDimension,squareDimension))
         
