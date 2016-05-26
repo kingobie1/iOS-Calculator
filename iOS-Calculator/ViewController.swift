@@ -84,7 +84,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func decimalTapped(sender: AnyObject) {
-        if !calculatorDisplay.text!.isEmpty {
+        
+        if calculatorDisplay.text!.rangeOfString(".") != nil {
+            // Do nothing if decimal is already on screen.
+            return
+        }
+        
+        isTypingNumber = true
+        
+        if calculatorDisplay.text == "" {
+            calculatorDisplay.text = "0."
+        } else {
             calculatorDisplay.text = calculatorDisplay.text! + "."
         }
     }
