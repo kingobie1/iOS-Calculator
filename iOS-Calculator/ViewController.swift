@@ -83,6 +83,11 @@ class ViewController: UIViewController {
         calculatorDisplay.text = String(firstNumber)
     }
     
+    @IBAction func decimalTapped(sender: AnyObject) {
+        if !calculatorDisplay.text!.isEmpty {
+            calculatorDisplay.text = calculatorDisplay.text! + "."
+        }
+    }
     
     // MARK: Helper functions
     
