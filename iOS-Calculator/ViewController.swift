@@ -29,9 +29,13 @@ class ViewController: UIViewController {
         
         // Set colors:
         self.view.backgroundColor = backgroundColor
+<<<<<<< HEAD
+=======
+        
+>>>>>>> Correct-UI-Size
         calculatorDisplay.textColor = textColor
         equalsButton.backgroundColor = equalsButtonColor
-        equalsButton.setTitleColor(textColor, forState: UIControlState.Normal)
+        equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)        
     }
     
     
@@ -83,6 +87,11 @@ class ViewController: UIViewController {
         calculatorDisplay.text = String(firstNumber)
     }
     
+    @IBAction func decimalTapped(sender: AnyObject) {
+        if !calculatorDisplay.text!.isEmpty {
+            calculatorDisplay.text = calculatorDisplay.text! + "."
+        }
+    }
     
     // MARK: Helper functions
     
