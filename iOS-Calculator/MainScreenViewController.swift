@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var calculatorDisplay: UILabel!
-    @IBOutlet weak var equalsButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
     var colorManager = ColorManager.sharedInstance
@@ -26,7 +25,27 @@ class ViewController: UIViewController {
     /* All Buttons: */
     @IBOutlet weak var acButton: ArithmeticButton!
     @IBOutlet weak var leftSemiButton: ArithmeticButton!
+    @IBOutlet weak var rightSemiButton: ArithmeticButton!
+    @IBOutlet weak var divisionButton: ArithmeticButton!
     
+    @IBOutlet weak var sevenButton: NumericalButton!
+    @IBOutlet weak var eightButton: NumericalButton!
+    @IBOutlet weak var nineButton: NumericalButton!
+    @IBOutlet weak var multiplyButton: ArithmeticButton!
+    
+    @IBOutlet weak var fourButton: NumericalButton!
+    @IBOutlet weak var fiveButton: NumericalButton!
+    @IBOutlet weak var sixButton: NumericalButton!
+    @IBOutlet weak var minusButton: ArithmeticButton!
+    
+    @IBOutlet weak var oneButton: NumericalButton!
+    @IBOutlet weak var twoButton: NumericalButton!
+    @IBOutlet weak var threeButton: NumericalButton!
+    @IBOutlet weak var plusButton: ArithmeticButton!
+    
+    @IBOutlet weak var decimalButton: NumericalButton!
+    @IBOutlet weak var zeroButton: NumericalButton!
+    @IBOutlet weak var equalsButton: UIButton!
 
     override func viewDidLoad() {
         let backgroundColor = colorManager.getColor(ColorType.Background)
@@ -144,6 +163,42 @@ class ViewController: UIViewController {
     func updateUI() {
         // Redraw your labels, update your UIElements, do what you have to do
         viewDidLoad()
+        redrawButtons()
+    }
+    
+    func redrawButtons() {
+        // Redraw all 5 rows of buttons
+        
+        //        let arrayButtons: [UIButton] = [acButton, leftSemiButton, rightSemiButton, divisionButton,
+        //                                        sevenButton, eightButton, nineButton, multiplyButton,
+        //                                        fourButton, fiveButton, sixButton, minusButton,
+        //                                        oneButton, twoButton, threeButton, plusButton,
+        //                                        decimalButton, zeroButton, equalsButton]
+        var arrayButtons = [UIButton]()
+        
+        arrayButtons.append(acButton)
+        arrayButtons.append(leftSemiButton)
+        arrayButtons.append(rightSemiButton)
+        arrayButtons.append(divisionButton)
+        arrayButtons.append(sevenButton)
+        arrayButtons.append(eightButton)
+        arrayButtons.append(nineButton)
+        arrayButtons.append(multiplyButton)
+        arrayButtons.append(fourButton)
+        arrayButtons.append(fiveButton)
+        arrayButtons.append(sixButton)
+        arrayButtons.append(minusButton)
+        arrayButtons.append(oneButton)
+        arrayButtons.append(twoButton)
+        arrayButtons.append(threeButton)
+        arrayButtons.append(plusButton)
+        arrayButtons.append(decimalButton)
+        arrayButtons.append(zeroButton)
+        arrayButtons.append(equalsButton)
+        
+        for button: UIButton in arrayButtons {
+            button.setNeedsDisplay()
+        }
     }
 }
 

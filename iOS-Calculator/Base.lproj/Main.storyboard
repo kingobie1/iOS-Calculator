@@ -631,9 +631,25 @@
                     <connections>
                         <outlet property="acButton" destination="437-6Z-Nw8" id="X5c-pP-Ggd"/>
                         <outlet property="calculatorDisplay" destination="dzv-t9-xN1" id="MxY-rp-fZP"/>
-                        <outlet property="equalsButton" destination="qRg-iS-mfl" id="XgY-Ng-L8g"/>
+                        <outlet property="decimalButton" destination="hij-gk-S2C" id="1Xd-eq-VOo"/>
+                        <outlet property="divisionButton" destination="JEa-4H-914" id="7EO-Xl-S7R"/>
+                        <outlet property="eightButton" destination="zhk-0b-Y5Y" id="txt-wp-juj"/>
+                        <outlet property="equalsButton" destination="qRg-iS-mfl" id="jR5-iO-h6b"/>
+                        <outlet property="fiveButton" destination="ihM-Ck-UfL" id="icz-9J-bLh"/>
+                        <outlet property="fourButton" destination="To4-XB-5Lp" id="xUa-fB-iEX"/>
                         <outlet property="leftSemiButton" destination="Wic-3V-lc7" id="Dl5-Xl-XOP"/>
                         <outlet property="menuButton" destination="ZMZ-nP-dzb" id="0v3-Ja-jHw"/>
+                        <outlet property="minusButton" destination="9EU-af-F2r" id="tkD-8X-msg"/>
+                        <outlet property="multiplyButton" destination="Wsk-jN-IKd" id="152-U2-XDJ"/>
+                        <outlet property="nineButton" destination="x9O-U6-aPC" id="z0b-BT-Lag"/>
+                        <outlet property="oneButton" destination="6YU-Ok-dEG" id="n8s-a9-Xko"/>
+                        <outlet property="plusButton" destination="cni-rO-y0k" id="Sm5-c1-7Xd"/>
+                        <outlet property="rightSemiButton" destination="3dZ-OA-kgG" id="vMz-zm-gVP"/>
+                        <outlet property="sevenButton" destination="Ue4-cI-Vc0" id="5h9-pe-XZK"/>
+                        <outlet property="sixButton" destination="7DS-MS-mbq" id="PnD-dS-DjU"/>
+                        <outlet property="threeButton" destination="VaY-2T-7q4" id="JvS-jA-OJD"/>
+                        <outlet property="twoButton" destination="FlY-n9-6q6" id="Ldw-Mc-wHW"/>
+                        <outlet property="zeroButton" destination="hsV-EV-I3J" id="ONS-bk-Qi6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
