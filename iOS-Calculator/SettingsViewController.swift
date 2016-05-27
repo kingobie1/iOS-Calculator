@@ -43,6 +43,10 @@ class SettingsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func changeColorTheme(sender: AnyObject) {
+        colorManager.switchColorTheme()
+        viewDidLoad()
+    }
 
     /*
     // MARK: - Navigation

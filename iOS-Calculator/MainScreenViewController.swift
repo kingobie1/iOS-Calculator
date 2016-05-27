@@ -22,6 +22,11 @@ class ViewController: UIViewController {
     var isFirstTime = true
     var firstNumber = 0.0
     var operation = ""
+    
+    /* All Buttons: */
+    @IBOutlet weak var acButton: ArithmeticButton!
+    @IBOutlet weak var leftSemiButton: ArithmeticButton!
+    
 
     override func viewDidLoad() {
         let backgroundColor = colorManager.getColor(ColorType.Background)
@@ -29,8 +34,6 @@ class ViewController: UIViewController {
         let equalsButtonColor = colorManager.getColor(ColorType.EqualButton)
         
         super.viewDidLoad()
-        
-        
         
         // Set colors:
         self.view.backgroundColor = backgroundColor
@@ -60,7 +63,6 @@ class ViewController: UIViewController {
             isTypingNumber = true
         }
     }
-    
 
     @IBAction func arithmeticTapped(sender: UIButton) {
         // User has clicked an arathmetic button: (+ - x ÷).
@@ -80,7 +82,6 @@ class ViewController: UIViewController {
         // Clear the calculator screen.
         reset()
     }
-    
 
     @IBAction func equalsTapped(sender: UIButton) {
         // User has clicked the equals button.
@@ -94,13 +95,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func decimalTapped(sender: AnyObject) {
+        // TODO: Remove
+        updateUI()
+        
+        if calculatorDisplay.text!.rangeOfString(".") != nil {
+            // Do nothing if there is already a decimal
+            return
+        }
+        
         if !calculatorDisplay.text!.isEmpty {
             calculatorDisplay.text = calculatorDisplay.text! + "."
         }
     }
     
-    // MARK: Helper functions
     
+    // MARK: Helper functions
     
     func calculate() {
         var results = 0.0
@@ -130,6 +139,11 @@ class ViewController: UIViewController {
         isTypingNumber = false
         isFirstTime = true
         firstNumber = 0.0
+    }
+    
+    func updateUI() {
+        // Redraw your labels, update your UIElements, do what you have to do
+        viewDidLoad()
     }
 }
 
