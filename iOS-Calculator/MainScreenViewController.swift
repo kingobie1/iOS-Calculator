@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         
         if isFirstTime {
             operation = sender.currentTitle!
-            firstNumber = Double(calculatorDisplay.text!)!
+            firstNumber = getDouble()
             isFirstTime = false
         } else {
             calculate()
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
         
         isFirstTime = true
         
-        calculatorDisplay.text = String(firstNumber)
+        setDouble(firstNumber)
     }
     
     @IBAction func decimalTapped(sender: AnyObject) {
@@ -134,6 +134,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func posNegTapped(sender: UIButton) {
+        // Switch between positive and negative value.
         
         // Do nothing if the screen is empty.
         if calculatorDisplay.text == "" { return }
@@ -151,6 +152,14 @@ class ViewController: UIViewController {
     
     @IBAction func percentageTapped(sender: AnyObject) {
         
+        var double: Double
+        
+        // Do nothing if the screen is empty.
+        if calculatorDisplay.text == "" { return }
+        
+        double = getDouble() / 100
+        
+        setDouble(double)
     }
     
     
@@ -169,7 +178,7 @@ class ViewController: UIViewController {
     func calculate() {
         var results = 0.0
         
-        let secondNumber = Double(calculatorDisplay.text!)!
+        let secondNumber = getDouble()
         
         switch operation {
         case "+":
@@ -187,7 +196,7 @@ class ViewController: UIViewController {
         print(firstNumber, operation, secondNumber, " = ", results)
         
         if results.isFinite {
-            calculatorDisplay.text = String(results)
+            setDouble(results)
         } else {
             results = 0
             calculatorDisplay.text = ""
@@ -242,6 +251,22 @@ class ViewController: UIViewController {
         for button: UIButton in arrayButtons {
             button.setNeedsDisplay()
         }
+    }
+    
+    private func getDouble() -> Double {
+        /// Get the double value displayed on the calculatorDisplay.
+        
+        if calculatorDisplay.text!.isEmpty {
+            return 0
+        } else {
+            return Double(calculatorDisplay.text!)!
+        }
+    }
+    
+    private func setDouble(double: Double) {
+        /// Set the calculatorDisplay text to the given double.
+        
+        calculatorDisplay.text = String(double)
     }
 }
 
