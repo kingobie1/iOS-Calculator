@@ -12,6 +12,7 @@
 		E0369E021CF77D2600D752C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E011CF77D2600D752C3 /* Settings.swift */; };
 		E0369E081CF77E6000D752C3 /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E071CF77E6000D752C3 /* ColorDetails.swift */; };
 		E064BCFF1CF7B5D3008D7E70 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */; };
+		E0BF607F1CFE39260066700A /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BF607E1CFE39260066700A /* color.swift */; };
 		E0D875AF1CF4E1CE002CCCA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875AE1CF4E1CE002CCCA6 /* AppDelegate.swift */; };
 		E0D875B11CF4E1CE002CCCA6 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D875B01CF4E1CE002CCCA6 /* MainScreenViewController.swift */; };
 		E0D875B41CF4E1CE002CCCA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D875B21CF4E1CE002CCCA6 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		E0369E011CF77D2600D752C3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E0369E071CF77E6000D752C3 /* ColorDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
 		E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		E0BF607E1CFE39260066700A /* color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		E0D875AB1CF4E1CE002CCCA6 /* iOS-Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D875AE1CF4E1CE002CCCA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0D875B01CF4E1CE002CCCA6 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		E0D875A21CF4E1CE002CCCA6 = {
 			isa = PBXGroup;
 			children = (
+				E0BF607E1CFE39260066700A /* color.swift */,
 				E0D875AD1CF4E1CE002CCCA6 /* iOS-Calculator */,
 				E0D875C21CF4E1CE002CCCA6 /* iOS-CalculatorTests */,
 				E0D875AC1CF4E1CE002CCCA6 /* Products */,
@@ -261,6 +264,7 @@
 				E0369E021CF77D2600D752C3 /* Settings.swift in Sources */,
 				E0369DFC1CF766DC00D752C3 /* SettingsViewController.swift in Sources */,
 				E0369DFA1CF75E5600D752C3 /* MenuButton.swift in Sources */,
+				E0BF607F1CFE39260066700A /* color.swift in Sources */,
 				E0D875D71CF52FCE002CCCA6 /* UIColorExtension.swift in Sources */,
 				E0D875CF1CF4EF4D002CCCA6 /* ArithmeticButton.swift in Sources */,
 				E0D875AF1CF4E1CE002CCCA6 /* AppDelegate.swift in Sources */,

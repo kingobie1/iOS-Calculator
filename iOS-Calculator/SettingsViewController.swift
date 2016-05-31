@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var statusBarBlock: UIView!
+    @IBOutlet weak var changeThemeButton: UIButton!
     
     var colorManager = ColorManager.sharedInstance
     
@@ -22,9 +23,11 @@ class SettingsViewController: UIViewController {
         let statusBlockColor = colorManager.getColor(ColorType.StatusBarBlock)
         let navColor = colorManager.getColor(ColorType.Default)
         let textColor = colorManager.getColor(ColorType.Text)
+//        let buttonColor = colorManager.getColor(ColorType.ArithmeticButton)
         
         super.viewDidLoad()
 
+        changeThemeButton.setTitleColor(textColor, forState: UIControlState.Normal)
         statusBarBlock.backgroundColor = statusBlockColor
         navBar.tintColor = textColor
         navBar.barTintColor = navColor
@@ -47,6 +50,8 @@ class SettingsViewController: UIViewController {
         colorManager.switchColorTheme()
         viewDidLoad()
     }
+    
+    
 
     /*
     // MARK: - Navigation

@@ -13,5 +13,5 @@ enum ColorTheme {
 }
 
 enum ColorType {
-    case Background, NumericalButton, ArithmeticButton, Text, EqualButton, Default, StatusBarBlock
+    case Background, NumericalButton, ArithmeticButton, Text, EqualButton, Default, StatusBarBlock, ButtonHighlight
 }

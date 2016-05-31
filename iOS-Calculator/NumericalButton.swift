@@ -13,23 +13,41 @@ class NumericalButton: UIButton {
     // Mark: Properties
     var colorManager = ColorManager.sharedInstance
     let screenSize: CGRect = UIScreen.mainScreen().bounds
-
+    var buttonColor: UIColor
+    var highlightColor: UIColor
+    var textColor: UIColor
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        let squareDimension: CGFloat = screenSize.width / 4
+    
+    required init?(coder aDecoder: NSCoder) {
+        buttonColor = colorManager.getColor(ColorType.NumericalButton)
+        highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        textColor = colorManager.getColor(ColorType.Text)
         
-        let buttonColor = colorManager.getColor(ColorType.NumericalButton)
-        let textColor = colorManager.getColor(ColorType.Text)
+        super.init(coder: aDecoder)
         
-//        var path = UIBezierPath(ovalInRect: rect)
-        let path = UIBezierPath(rect: CGRectMake(0,0,squareDimension,squareDimension))
+        self.setBackgroundImage(Color.imageWithColor(buttonColor), forState: UIControlState.Normal)
+        self.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
+
+        self.setTitleColor(textColor, forState: UIControlState.Normal)
+    }
+    
+    override func setNeedsDisplay() {
+        super.setNeedsDisplay()
         
-        buttonColor.setFill()
+        initColor()
         
-        setTitleColor(textColor, forState: UIControlState.Normal)
+        self.setBackgroundImage(Color.imageWithColor(buttonColor), forState: UIControlState.Normal)
+        self.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
         
-        path.fill()
+        self.setTitleColor(textColor, forState: UIControlState.Normal)
+
+    }
+    
+    // MARK: Helper Functions
+    
+    func initColor() {
+        buttonColor = colorManager.getColor(ColorType.NumericalButton)
+        highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        textColor = colorManager.getColor(ColorType.Text)
     }
 }

@@ -51,13 +51,16 @@ class ViewController: UIViewController {
         let backgroundColor = colorManager.getColor(ColorType.Background)
         let textColor = colorManager.getColor(ColorType.Text)
         let equalsButtonColor = colorManager.getColor(ColorType.EqualButton)
+        let highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
         
         super.viewDidLoad()
         
         // Set colors:
         self.view.backgroundColor = backgroundColor
         calculatorDisplay.textColor = textColor
-        equalsButton.backgroundColor = equalsButtonColor
+        
+        equalsButton.setBackgroundImage(Color.imageWithColor(equalsButtonColor), forState: UIControlState.Normal)
+        equalsButton.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
         equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)
         menuButton.backgroundColor = backgroundColor
     }
@@ -103,6 +106,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func equalsTapped(sender: UIButton) {
+        if calculatorDisplay.text!.isEmpty {
+            return
+        }
+        
         // User has clicked the equals button.
         isTypingNumber = false
         
@@ -114,17 +121,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func decimalTapped(sender: AnyObject) {
-        // TODO: Remove
-        updateUI()
-        
         if calculatorDisplay.text!.rangeOfString(".") != nil {
-            // Do nothing if there is already a decimal
+            // Do nothing if there is already a decimal.
             return
         }
         
-        if !calculatorDisplay.text!.isEmpty {
+        if calculatorDisplay.text == "0" {
+            calculatorDisplay.text = calculatorDisplay.text! + "0."
+        } else if !calculatorDisplay.text!.isEmpty {
             calculatorDisplay.text = calculatorDisplay.text! + "."
         }
+    }
+    
+    @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
+        
+        // When comming back from the settings.
+        if sender.sourceViewController is SettingsViewController {
+            updateUI()
+        }
+        
     }
     
     
@@ -132,6 +147,7 @@ class ViewController: UIViewController {
     
     func calculate() {
         var results = 0.0
+        
         let secondNumber = Double(calculatorDisplay.text!)!
         
         switch operation {
@@ -149,7 +165,13 @@ class ViewController: UIViewController {
         
         print(firstNumber, operation, secondNumber, " = ", results)
         
-        calculatorDisplay.text = String(results)
+        if results.isFinite {
+            calculatorDisplay.text = String(results)
+        } else {
+            results = 0
+            calculatorDisplay.text = ""
+        }
+        
         firstNumber = results
     }
     

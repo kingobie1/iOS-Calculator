@@ -53,6 +53,9 @@ class ColorManager {
         case .Background:
             return UIColor(netHex:0x050505)
             
+        case .ButtonHighlight:
+            return UIColor(netHex:0x050505)
+            
         case .Default:
             return UIColor(netHex: 0x000000)
             
@@ -79,6 +82,9 @@ class ColorManager {
             
         case .Background:
             return UIColor(netHex:0xffffff)
+            
+        case .ButtonHighlight:
+            return UIColor(netHex:0xcadee1)
             
         case .Default:
             return UIColor(netHex: 0xffffff)

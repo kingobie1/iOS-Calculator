@@ -23,7 +23,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-t9-xN1">
                                 <rect key="frame" x="20" y="28" width="144" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="206" y="181" width="144" height="21"/>
@@ -53,7 +53,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wVC-zP-RM0"/>
+                                            <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcy-Q6-bzH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-3V-lc7" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -675,6 +675,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Tbr-n0-w3x">
                                             <connections>
                                                 <action selector="settingsModalDone:" destination="RDV-e1-vET" id="aYn-XA-s2m"/>
+                                                <segue destination="9Ku-mr-GA9" kind="unwind" unwindAction="unwindToMainScreen:" id="I9W-Xc-s5E"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -742,11 +743,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="changeThemeButton" destination="KSq-PP-Dya" id="Svq-ht-BGx"/>
                         <outlet property="navBar" destination="fZp-FK-hQ4" id="ikB-ci-XxR"/>
                         <outlet property="statusBarBlock" destination="BSZ-3N-BF8" id="Va3-cK-sTO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bA-ON-gEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9Ku-mr-GA9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="657" y="408.75"/>
         </scene>
