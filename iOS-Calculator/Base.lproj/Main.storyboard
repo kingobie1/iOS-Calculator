@@ -56,13 +56,13 @@
                                             <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcy-Q6-bzH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-3V-lc7" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-3V-lc7" userLabel="Pos Neg Button" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="32" y="0.0" width="30" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wic-3V-lc7" secondAttribute="height" multiplier="1:1" id="7vE-Fr-vv6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="("/>
+                                        <state key="normal" title="+/-"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="7vE-Fr-vv6"/>
@@ -76,14 +76,17 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="33" y="0.0" width="30" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="posNegTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b6b-Gv-dyD"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dZ-OA-kgG" userLabel="RIght Semi Button" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dZ-OA-kgG" userLabel="Percentage Button" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="64" y="0.0" width="30" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3dZ-OA-kgG" secondAttribute="height" multiplier="1:1" id="CSK-Tc-Ehx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title=")"/>
+                                        <state key="normal" title="%"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="CSK-Tc-Ehx"/>
@@ -97,6 +100,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="66" y="0.0" width="30" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="percentageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I3s-rt-RT8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-4H-914" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="96" y="0.0" width="30" height="36"/>
@@ -637,14 +643,14 @@
                         <outlet property="equalsButton" destination="qRg-iS-mfl" id="jR5-iO-h6b"/>
                         <outlet property="fiveButton" destination="ihM-Ck-UfL" id="icz-9J-bLh"/>
                         <outlet property="fourButton" destination="To4-XB-5Lp" id="xUa-fB-iEX"/>
-                        <outlet property="leftSemiButton" destination="Wic-3V-lc7" id="Dl5-Xl-XOP"/>
                         <outlet property="menuButton" destination="ZMZ-nP-dzb" id="0v3-Ja-jHw"/>
                         <outlet property="minusButton" destination="9EU-af-F2r" id="tkD-8X-msg"/>
                         <outlet property="multiplyButton" destination="Wsk-jN-IKd" id="152-U2-XDJ"/>
                         <outlet property="nineButton" destination="x9O-U6-aPC" id="z0b-BT-Lag"/>
                         <outlet property="oneButton" destination="6YU-Ok-dEG" id="n8s-a9-Xko"/>
+                        <outlet property="percentageButton" destination="3dZ-OA-kgG" id="bEW-JQ-TYY"/>
                         <outlet property="plusButton" destination="cni-rO-y0k" id="Sm5-c1-7Xd"/>
-                        <outlet property="rightSemiButton" destination="3dZ-OA-kgG" id="vMz-zm-gVP"/>
+                        <outlet property="posNegButton" destination="Wic-3V-lc7" id="FbU-qC-4v6"/>
                         <outlet property="sevenButton" destination="Ue4-cI-Vc0" id="5h9-pe-XZK"/>
                         <outlet property="sixButton" destination="7DS-MS-mbq" id="PnD-dS-DjU"/>
                         <outlet property="threeButton" destination="VaY-2T-7q4" id="JvS-jA-OJD"/>

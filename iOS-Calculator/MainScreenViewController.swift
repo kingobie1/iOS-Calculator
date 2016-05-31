@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     
     /* All Buttons: */
     @IBOutlet weak var acButton: ArithmeticButton!
-    @IBOutlet weak var leftSemiButton: ArithmeticButton!
-    @IBOutlet weak var rightSemiButton: ArithmeticButton!
+    @IBOutlet weak var posNegButton: ArithmeticButton!
+    @IBOutlet weak var percentageButton: ArithmeticButton!
     @IBOutlet weak var divisionButton: ArithmeticButton!
     
     @IBOutlet weak var sevenButton: NumericalButton!
@@ -133,6 +133,27 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func posNegTapped(sender: UIButton) {
+        
+        // Do nothing if the screen is empty.
+        if calculatorDisplay.text == "" { return }
+        
+        let tempString: String = calculatorDisplay.text!
+        
+        if tempString.containsString("-") {
+            // Set positive.
+            calculatorDisplay.text = (tempString as NSString).substringFromIndex(1)
+        } else {
+            // Set negative.
+            calculatorDisplay.text = "-" + tempString
+        }
+    }
+    
+    @IBAction func percentageTapped(sender: AnyObject) {
+        
+    }
+    
+    
     @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
         
         // When comming back from the settings.
@@ -191,7 +212,7 @@ class ViewController: UIViewController {
     func redrawButtons() {
         // Redraw all 5 rows of buttons
         
-        //        let arrayButtons: [UIButton] = [acButton, leftSemiButton, rightSemiButton, divisionButton,
+        //        let arrayButtons: [UIButton] = [acButton, posNegButton, percentageButton, divisionButton,
         //                                        sevenButton, eightButton, nineButton, multiplyButton,
         //                                        fourButton, fiveButton, sixButton, minusButton,
         //                                        oneButton, twoButton, threeButton, plusButton,
@@ -199,8 +220,8 @@ class ViewController: UIViewController {
         var arrayButtons = [UIButton]()
         
         arrayButtons.append(acButton)
-        arrayButtons.append(leftSemiButton)
-        arrayButtons.append(rightSemiButton)
+        arrayButtons.append(posNegButton)
+        arrayButtons.append(percentageButton)
         arrayButtons.append(divisionButton)
         arrayButtons.append(sevenButton)
         arrayButtons.append(eightButton)
