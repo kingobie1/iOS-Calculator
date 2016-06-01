@@ -106,9 +106,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func equalsTapped(sender: UIButton) {
-        if calculatorDisplay.text!.isEmpty {
-            return
-        }
+        
+        // Do nothing if the screen does not contain any numbers.
+        if !containsNumbers() { return }
         
         // User has clicked the equals button.
         isTypingNumber = false
@@ -121,14 +121,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func decimalTapped(sender: AnyObject) {
-        if calculatorDisplay.text!.rangeOfString(".") != nil {
+        if calculatorDisplay.text!.rangeOfString(".") != nil && !isTypingNumber {
             // Do nothing if there is already a decimal.
             return
         }
         
-        if calculatorDisplay.text == "0" {
-            calculatorDisplay.text = calculatorDisplay.text! + "0."
-        } else if !calculatorDisplay.text!.isEmpty {
+        if calculatorDisplay.text!.isEmpty {
+            calculatorDisplay.text = "0."
+        } else {
             calculatorDisplay.text = calculatorDisplay.text! + "."
         }
     }
@@ -136,8 +136,13 @@ class ViewController: UIViewController {
     @IBAction func posNegTapped(sender: UIButton) {
         // Switch between positive and negative value.
         
-        // Do nothing if the screen is empty.
-        if calculatorDisplay.text == "" { return }
+        isTypingNumber = true
+        
+        // Do noemptything if the screen is .
+        if calculatorDisplay.text!.isEmpty {
+            calculatorDisplay.text = "-"
+            return
+        }
         
         let tempString: String = calculatorDisplay.text!
         
@@ -154,8 +159,8 @@ class ViewController: UIViewController {
         
         var double: Double
         
-        // Do nothing if the screen is empty.
-        if calculatorDisplay.text == "" { return }
+        // Do nothing if the screen does not contain any numbers.
+        if !containsNumbers() { return }
         
         double = getDouble() / 100
         
@@ -202,6 +207,19 @@ class ViewController: UIViewController {
         }
         
         firstNumber = results
+    }
+    
+    /// Returns true if calculatorDisplay contains any numbers.
+    private func containsNumbers() -> Bool {
+        
+        let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
+        let decimalRange = calculatorDisplay.text!.rangeOfCharacterFromSet(decimalCharacters, options: NSStringCompareOptions(), range: nil)
+        
+        if decimalRange == nil {
+            return false
+        }
+        
+        return true
     }
     
     /// Get the double value displayed on the calculatorDisplay.
