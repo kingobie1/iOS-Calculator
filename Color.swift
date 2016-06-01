@@ -9,7 +9,10 @@
 
 import UIKit
 
+
 class Color {
+    
+    /// Creates an image of the given color
     class func imageWithColor(color: UIColor, size: CGSize = CGSizeMake(60, 60)) -> UIImage {
         let rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContext(rect.size)

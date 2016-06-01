@@ -43,9 +43,11 @@ class NumericalButton: UIButton {
 
     }
     
+    
     // MARK: Helper Functions
     
-    func initColor() {
+    /// Set colors.
+    private func initColor() {
         buttonColor = colorManager.getColor(ColorType.NumericalButton)
         highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
         textColor = colorManager.getColor(ColorType.Text)

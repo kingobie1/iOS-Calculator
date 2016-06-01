@@ -19,6 +19,7 @@ class ColorManager {
     
     // MARK: Public Functions
     
+    /// Returns the appropriate color of the requested color type. This functions know the color scheme.
     func getColor(colorType: ColorType) -> UIColor {
         var color: UIColor
         
@@ -34,6 +35,7 @@ class ColorManager {
         return color
     }
     
+    /// Alternates the colorScheme.
     func switchColorTheme() {
         if colorTheme == ColorTheme.Dark {
             colorTheme = ColorTheme.Light
@@ -44,6 +46,7 @@ class ColorManager {
     
     // MARK: Helper Functions
     
+    /// Returns the appropriate color for the colorType in the DarkColorTheme.
     private func getDarkColor(colorType: ColorType) -> UIColor {
         switch colorType {
             
@@ -74,6 +77,7 @@ class ColorManager {
         }
     }
     
+    /// Returns the appropriate color for the colorType in the LightColorTheme.
     private func getLightColor(colorType: ColorType) -> UIColor {
         switch colorType {
             

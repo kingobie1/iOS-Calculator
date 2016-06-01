@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// For now has no functionality.
 class Settings {
     
     // MARK: Properties

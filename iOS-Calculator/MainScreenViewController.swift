@@ -169,13 +169,12 @@ class ViewController: UIViewController {
         if sender.sourceViewController is SettingsViewController {
             updateUI()
         }
-        
     }
     
     
     // MARK: Helper functions
     
-    func calculate() {
+    private func calculate() {
         var results = 0.0
         
         let secondNumber = getDouble()
@@ -205,21 +204,38 @@ class ViewController: UIViewController {
         firstNumber = results
     }
     
-    func reset() {
+    /// Get the double value displayed on the calculatorDisplay.
+    private func getDouble() -> Double {
+        
+        if calculatorDisplay.text!.isEmpty {
+            return 0
+        } else {
+            return Double(calculatorDisplay.text!)!
+        }
+    }
+    
+    /// Set the calculatorDisplay text to the given double.
+    private func setDouble(double: Double) {
+        
+        calculatorDisplay.text = String(double)
+    }
+    
+    /// Reset current calculator state.
+    private func reset() {
         calculatorDisplay.text = ""
         isTypingNumber = false
         isFirstTime = true
         firstNumber = 0.0
     }
-    
-    func updateUI() {
-        // Redraw your labels, update your UIElements, do what you have to do
+
+    /// Redraw your labels, update your UIElements, do what you have to do
+    private func updateUI() {
         viewDidLoad()
         redrawButtons()
     }
     
-    func redrawButtons() {
-        // Redraw all 5 rows of buttons
+    /// Redraw all 5 rows of buttons
+    private func redrawButtons() {
         
         //        let arrayButtons: [UIButton] = [acButton, posNegButton, percentageButton, divisionButton,
         //                                        sevenButton, eightButton, nineButton, multiplyButton,
@@ -251,22 +267,6 @@ class ViewController: UIViewController {
         for button: UIButton in arrayButtons {
             button.setNeedsDisplay()
         }
-    }
-    
-    private func getDouble() -> Double {
-        /// Get the double value displayed on the calculatorDisplay.
-        
-        if calculatorDisplay.text!.isEmpty {
-            return 0
-        } else {
-            return Double(calculatorDisplay.text!)!
-        }
-    }
-    
-    private func setDouble(double: Double) {
-        /// Set the calculatorDisplay text to the given double.
-        
-        calculatorDisplay.text = String(double)
     }
 }
 

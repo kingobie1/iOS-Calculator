@@ -51,7 +51,6 @@ class SettingsViewController: UIViewController {
         viewDidLoad()
     }
     
-    
 
     /*
     // MARK: - Navigation
