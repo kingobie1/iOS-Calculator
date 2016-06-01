@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainScreenViewController: UIViewController {
     
     // MARK: Properties
+    
+    var settings: Settings
     
     @IBOutlet weak var calculatorDisplay: UILabel!
     @IBOutlet weak var menuButton: UIButton!
@@ -48,6 +50,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalsButton: UIButton!
 
     override func viewDidLoad() {
+        if let savedSettings = loadSettings() {
+            settings = savedSettings
+            colorManager.setColorTheme(savedSettings.colorTheme)
+            redrawButtons()
+        }
+        
         let backgroundColor = colorManager.getColor(ColorType.Background)
         let textColor = colorManager.getColor(ColorType.Text)
         let equalsButtonColor = colorManager.getColor(ColorType.EqualButton)
@@ -63,6 +71,14 @@ class ViewController: UIViewController {
         equalsButton.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
         equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)
         menuButton.backgroundColor = backgroundColor
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        // Load default settings.
+        self.settings = Settings.init(colorTheme: ColorTheme.Dark)!
+        
+        super.init(coder: aDecoder)
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -285,6 +301,23 @@ class ViewController: UIViewController {
         for button: UIButton in arrayButtons {
             button.setNeedsDisplay()
         }
+    }
+    
+    func saveSettings() {
+        
+        settings.colorTheme = colorManager.getCurrentColorTheme()
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(settings, toFile: Settings.ArchiveURL.path!)
+        
+        if !isSuccessfulSave {
+            
+            print("Failed to save settings")
+            
+        }
+    }
+    
+    func loadSettings() -> Settings? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Settings.ArchiveURL.path!) as? Settings
     }
 }
 

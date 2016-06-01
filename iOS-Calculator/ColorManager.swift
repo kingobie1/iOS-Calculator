@@ -44,6 +44,14 @@ class ColorManager {
         }
     }
     
+    func setColorTheme(colorTheme: ColorTheme) {
+        self.colorTheme = colorTheme
+    }
+    
+    func getCurrentColorTheme() -> ColorTheme {
+        return colorTheme
+    }
+    
     // MARK: Helper Functions
     
     /// Returns the appropriate color for the colorType in the DarkColorTheme.
