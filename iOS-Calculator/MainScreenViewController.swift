@@ -104,93 +104,12 @@ class MainScreenViewController: UIViewController {
         
         displayValue = brain.result
     }
-
-//    @IBAction func arithmeticTapped(sender: UIButton) {
-//        // User has clicked an arathmetic button: (+ - x ÷).
-//        isUserTypingNumber = false
-//        
-//        if isFirstTime {
-//            operation = sender.currentTitle!
-//            firstNumber = getDouble()
-//            isFirstTime = false
-//        } else {
-//            calculate()
-//            operation = sender.currentTitle!
-//        }
-//    }
-//    
-//    @IBAction func clearTapped(sender: UIButton) {
-//        // Clear the calculator screen.
-//        reset()
-//    }
-//
-//    @IBAction func equalsTapped(sender: UIButton) {
-//        
-//        // Do nothing if the screen does not contain any numbers.
-//        if !containsNumbers() { return }
-//        
-//        // User has clicked the equals button.
-//        isUserTypingNumber = false
-//        
-//        calculate()
-//        
-//        isFirstTime = true
-//        
-//        setDouble(firstNumber)
-//    }
-//    
-//    @IBAction func decimalTapped(sender: AnyObject) {
-//        if calculatorDisplay.text!.rangeOfString(".") != nil && !isUserTypingNumber {
-//            // Do nothing if there is already a decimal.
-//            return
-//        }
-//        
-//        if calculatorDisplay.text!.isEmpty {
-//            calculatorDisplay.text = "0."
-//        } else {
-//            calculatorDisplay.text = calculatorDisplay.text! + "."
-//        }
-//    }
-//    
-//    @IBAction func posNegTapped(sender: UIButton) {
-//        // Switch between positive and negative value.
-//        
-//        isUserTypingNumber = true
-//        
-//        // Do noemptything if the screen is .
-//        if calculatorDisplay.text!.isEmpty {
-//            calculatorDisplay.text = "-"
-//            return
-//        }
-//        
-//        let tempString: String = calculatorDisplay.text!
-//        
-//        if tempString.containsString("-") {
-//            // Set positive.
-//            calculatorDisplay.text = (tempString as NSString).substringFromIndex(1)
-//        } else {
-//            // Set negative.
-//            calculatorDisplay.text = "-" + tempString
-//        }
-//    }
-//    
-//    @IBAction func percentageTapped(sender: AnyObject) {
-//        
-//        var double: Double
-//        
-//        // Do nothing if the screen does not contain any numbers.
-//        if !containsNumbers() { return }
-//        
-//        double = getDouble() / 100
-//        
-//        setDouble(double)
-//    }
-    
     
     @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
         
         // When comming back from the settings.
         if sender.sourceViewController is SettingsViewController {
+            print("updating ui")
             updateUI()
         }
     }
@@ -198,65 +117,6 @@ class MainScreenViewController: UIViewController {
     
     // MARK: - Helper functions
     
-//    private func calculate() {
-//        var results = 0.0
-//        
-//        let secondNumber = getDouble()
-//        
-//        switch operation {
-//        case "+":
-//            results = firstNumber + secondNumber
-//        case "-":
-//            results = firstNumber - secondNumber
-//        case "x":
-//            results = firstNumber * secondNumber
-//        case "÷":
-//            results = firstNumber / secondNumber
-//        default:
-//            break
-//        }
-//        
-//        print(firstNumber, operation, secondNumber, " = ", results)
-//        
-//        if results.isFinite {
-//            setDouble(results)
-//        } else {
-//            results = 0
-//            calculatorDisplay.text = ""
-//        }
-//        
-//        firstNumber = results
-//    }
-//    
-//    /// Returns true if calculatorDisplay contains any numbers.
-//    private func containsNumbers() -> Bool {
-//        
-//        let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
-//        let decimalRange = calculatorDisplay.text!.rangeOfCharacterFromSet(decimalCharacters, options: NSStringCompareOptions(), range: nil)
-//        
-//        if decimalRange == nil {
-//            return false
-//        }
-//        
-//        return true
-//    }
-//    
-//    /// Get the double value displayed on the calculatorDisplay.
-//    private func getDouble() -> Double {
-//        
-//        if calculatorDisplay.text!.isEmpty {
-//            return 0
-//        } else {
-//            return Double(calculatorDisplay.text!)!
-//        }
-//    }
-//    
-//    /// Set the calculatorDisplay text to the given double.
-//    private func setDouble(double: Double) {
-//        
-//        calculatorDisplay.text = String(double)
-//    }
-//    
 //    /// Reset current calculator state.
 //    private func reset() {
 //        calculatorDisplay.text = ""
@@ -285,9 +145,7 @@ class MainScreenViewController: UIViewController {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(settings, toFile: Settings.ArchiveURL.path!)
         
         if !isSuccessfulSave {
-            
             print("Failed to save settings")
-            
         }
     }
     
