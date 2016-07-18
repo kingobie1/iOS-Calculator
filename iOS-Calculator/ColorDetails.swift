@@ -9,7 +9,7 @@
 import UIKit
 
 enum ColorTheme: String {
-    case Light, Dark
+    case Light, Dark, Blue, StepChampion
 }
 
 enum ColorType {

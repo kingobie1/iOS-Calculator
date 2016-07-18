@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -729,7 +730,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZp-FK-hQ4">
+                            <navigationBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZp-FK-hQ4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Select Theme" id="lyR-yt-4Re">
@@ -746,11 +747,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="efN-t1-Khu">
-                                <rect key="frame" x="0.0" y="69" width="400" height="70"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="efN-t1-Khu">
+                                <rect key="frame" x="0.0" y="69" width="3932" height="1249"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-gb-OWM">
-                                        <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-gb-OWM">
+                                        <rect key="frame" x="0.0" y="0.0" width="1304" height="1249"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hJz-gb-OWM" secondAttribute="height" multiplier="1:1" id="Mg2-X5-m8B"/>
@@ -770,8 +771,8 @@
                                             <action selector="selectDarkTheme:" destination="RDV-e1-vET" eventType="touchUpInside" id="HWC-cb-iYu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcZ-Lm-0zn">
-                                        <rect key="frame" x="177" y="20" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcZ-Lm-0zn">
+                                        <rect key="frame" x="1314" y="0.0" width="1304" height="1249"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZcZ-Lm-0zn" secondAttribute="height" multiplier="107:30" id="Zhk-iU-KGG"/>
@@ -791,13 +792,13 @@
                                             <action selector="selectLightTheme:" destination="RDV-e1-vET" eventType="touchUpInside" id="OAT-kT-ZdT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKd-SC-Jyg">
-                                        <rect key="frame" x="334" y="20" width="46" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKd-SC-Jyg">
+                                        <rect key="frame" x="2628" y="0.0" width="1304" height="1249"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JKd-SC-Jyg" secondAttribute="height" multiplier="107:30" id="GD5-fW-SJY"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button" image="ThemeSample_StepChampion"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="GD5-fW-SJY"/>
@@ -808,17 +809,21 @@
                                                 <exclude reference="GD5-fW-SJY"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="selectBlueTheme:" destination="RDV-e1-vET" eventType="touchUpInside" id="HO1-vI-6lp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LOz-wJ-4cG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="g7g-LS-JGn">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7g-LS-JGn" id="M8W-2W-9s2">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixE-Gx-P75">
@@ -843,7 +848,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-4r-zKM">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -871,6 +876,8 @@
                                                     <exclude reference="Wha-4r-zKM"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="A64-V1-NzX"/>
+                                                    <exclude reference="Lwe-Hs-9EN"/>
                                                     <exclude reference="4Xw-oZ-bpF"/>
                                                     <exclude reference="DHn-Sl-oJG"/>
                                                     <exclude reference="F2X-EK-g85"/>
@@ -882,8 +889,6 @@
                                                     <exclude reference="n06-e8-guv"/>
                                                     <exclude reference="rVo-2O-73d"/>
                                                     <exclude reference="zED-QO-8a3"/>
-                                                    <exclude reference="A64-V1-NzX"/>
-                                                    <exclude reference="Lwe-Hs-9EN"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -892,6 +897,8 @@
                                                     <include reference="Wha-4r-zKM"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="A64-V1-NzX"/>
+                                                    <include reference="Lwe-Hs-9EN"/>
                                                     <exclude reference="4Xw-oZ-bpF"/>
                                                     <include reference="DHn-Sl-oJG"/>
                                                     <exclude reference="F2X-EK-g85"/>
@@ -903,8 +910,6 @@
                                                     <exclude reference="n06-e8-guv"/>
                                                     <exclude reference="rVo-2O-73d"/>
                                                     <exclude reference="zED-QO-8a3"/>
-                                                    <include reference="A64-V1-NzX"/>
-                                                    <include reference="Lwe-Hs-9EN"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -942,19 +947,19 @@
                                 <exclude reference="LOz-wJ-4cG"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8Fb-Du-pu6"/>
+                                <exclude reference="8X6-tM-FAI"/>
+                                <exclude reference="xO9-1f-vSj"/>
                                 <exclude reference="bXs-i4-KQe"/>
                                 <exclude reference="c01-2X-34f"/>
                                 <exclude reference="erZ-Ne-21z"/>
                                 <exclude reference="gzI-do-VqO"/>
-                                <exclude reference="8Fb-Du-pu6"/>
-                                <exclude reference="8X6-tM-FAI"/>
-                                <exclude reference="xO9-1f-vSj"/>
-                                <exclude reference="8vS-3k-nNz"/>
-                                <exclude reference="fRE-Hn-1z6"/>
-                                <exclude reference="gq6-rU-aEv"/>
                                 <exclude reference="LON-jO-jpk"/>
                                 <exclude reference="O7C-Ke-FDx"/>
                                 <exclude reference="hvM-k6-Gge"/>
+                                <exclude reference="8vS-3k-nNz"/>
+                                <exclude reference="fRE-Hn-1z6"/>
+                                <exclude reference="gq6-rU-aEv"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -964,19 +969,19 @@
                                 <include reference="LOz-wJ-4cG"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8Fb-Du-pu6"/>
+                                <include reference="8X6-tM-FAI"/>
+                                <include reference="xO9-1f-vSj"/>
                                 <include reference="bXs-i4-KQe"/>
                                 <include reference="c01-2X-34f"/>
                                 <include reference="erZ-Ne-21z"/>
                                 <include reference="gzI-do-VqO"/>
-                                <include reference="8Fb-Du-pu6"/>
-                                <include reference="8X6-tM-FAI"/>
-                                <include reference="xO9-1f-vSj"/>
-                                <include reference="8vS-3k-nNz"/>
-                                <include reference="fRE-Hn-1z6"/>
-                                <include reference="gq6-rU-aEv"/>
                                 <include reference="LON-jO-jpk"/>
                                 <include reference="O7C-Ke-FDx"/>
                                 <include reference="hvM-k6-Gge"/>
+                                <include reference="8vS-3k-nNz"/>
+                                <include reference="fRE-Hn-1z6"/>
+                                <include reference="gq6-rU-aEv"/>
                             </mask>
                         </variation>
                     </view>
@@ -994,5 +999,6 @@
     <resources>
         <image name="ThemeSample_Dark" width="1250" height="1249"/>
         <image name="ThemeSample_Light" width="1250" height="1249"/>
+        <image name="ThemeSample_StepChampion" width="1250" height="1249"/>
     </resources>
 </document>

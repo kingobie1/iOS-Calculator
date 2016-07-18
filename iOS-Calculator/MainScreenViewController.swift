@@ -140,7 +140,7 @@ class MainScreenViewController: UIViewController {
     
     func saveSettings() {
         
-        settings.colorTheme = colorManager.getCurrentColorTheme()
+        settings.colorTheme = colorManager.getColorTheme()
         
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(settings, toFile: Settings.ArchiveURL.path!)
         

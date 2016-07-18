@@ -19,8 +19,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         let backgroundColor = colorManager.getColor(ColorType.Background)
-        let statusBlockColor = colorManager.getColor(ColorType.StatusBarBlock)
-        let navColor = colorManager.getColor(ColorType.Default)
+        let statusBlockColor = colorManager.getColor(ColorType.EqualButton)
+        let navColor = colorManager.getColor(ColorType.EqualButton)
         let textColor = colorManager.getColor(ColorType.Text)
 //        let buttonColor = colorManager.getColor(ColorType.ArithmeticButton)
         
@@ -55,6 +55,10 @@ class SettingsViewController: UIViewController {
         viewDidLoad()
     }
 
+    @IBAction func selectBlueTheme(sender: AnyObject) {
+        colorManager.setColorTheme(ColorTheme.StepChampion)
+        viewDidLoad()
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
