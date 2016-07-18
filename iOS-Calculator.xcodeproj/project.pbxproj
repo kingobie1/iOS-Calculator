@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E02E74921D3C1B610098B83F /* CalculatorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E74911D3C1B610098B83F /* CalculatorMainViewController.swift */; };
+		E02E74941D3C377E0098B83F /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E74931D3C377E0098B83F /* CalculatorBrain.swift */; };
 		E0369DFA1CF75E5600D752C3 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369DF91CF75E5600D752C3 /* MenuButton.swift */; };
 		E0369DFC1CF766DC00D752C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */; };
 		E0369E021CF77D2600D752C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E011CF77D2600D752C3 /* Settings.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E02E74911D3C1B610098B83F /* CalculatorMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorMainViewController.swift; sourceTree = "<group>"; };
+		E02E74931D3C377E0098B83F /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		E0369DF91CF75E5600D752C3 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E0369E011CF77D2600D752C3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -79,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E02E74901D3C1AC30098B83F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0D875B71CF4E1CE002CCCA6 /* LaunchScreen.storyboard */,
+				E0D875AE1CF4E1CE002CCCA6 /* AppDelegate.swift */,
+				E0D875BA1CF4E1CE002CCCA6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E04462401D3969E900F1215A /* HockeySDK.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +126,7 @@
 			children = (
 				E0D875B01CF4E1CE002CCCA6 /* MainScreenViewController.swift */,
 				E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */,
+				E02E74911D3C1B610098B83F /* CalculatorMainViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +145,7 @@
 		E064BD031CF7BA8C008D7E70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E02E74931D3C377E0098B83F /* CalculatorBrain.swift */,
 				E0369E011CF77D2600D752C3 /* Settings.swift */,
 			);
 			name = Model;
@@ -158,12 +174,10 @@
 			children = (
 				E04462401D3969E900F1215A /* HockeySDK.embeddedframework */,
 				E0D875B21CF4E1CE002CCCA6 /* Main.storyboard */,
-				E0D875B71CF4E1CE002CCCA6 /* LaunchScreen.storyboard */,
-				E0D875AE1CF4E1CE002CCCA6 /* AppDelegate.swift */,
-				E0D875BA1CF4E1CE002CCCA6 /* Info.plist */,
+				E064BD031CF7BA8C008D7E70 /* Model */,
 				E064BD001CF7B9EC008D7E70 /* Views */,
 				E064BD011CF7B9FE008D7E70 /* Controllers */,
-				E064BD031CF7BA8C008D7E70 /* Model */,
+				E02E74901D3C1AC30098B83F /* Supporting Files */,
 				E064BD021CF7BA06008D7E70 /* Utilities */,
 				E0D875B51CF4E1CE002CCCA6 /* Assets.xcassets */,
 			);
@@ -309,7 +323,9 @@
 				E0BF607F1CFE39260066700A /* Color.swift in Sources */,
 				E0D875D71CF52FCE002CCCA6 /* UIColorExtension.swift in Sources */,
 				E0D875CF1CF4EF4D002CCCA6 /* ArithmeticButton.swift in Sources */,
+				E02E74941D3C377E0098B83F /* CalculatorBrain.swift in Sources */,
 				E0D875AF1CF4E1CE002CCCA6 /* AppDelegate.swift in Sources */,
+				E02E74921D3C1B610098B83F /* CalculatorMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
