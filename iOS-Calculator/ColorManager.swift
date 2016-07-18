@@ -8,6 +8,14 @@
 
 import UIKit
 
+enum ColorTheme: String {
+    case Light, Dark, Blue, StepChampion
+}
+
+enum ColorType {
+    case Background, NumericalButton, ArithmeticButton, Text, EqualButton, Default, StatusBarBlock, ButtonHighlight
+}
+
 // Singleton ColorManager
 class ColorManager {
     static let sharedInstance = ColorManager()
