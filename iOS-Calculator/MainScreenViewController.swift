@@ -10,45 +10,40 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     
-    // MARK: Properties
+    // MARK: - Properties
+    @IBOutlet private weak var calculatorDisplay: UILabel!
     
-    var settings: Settings
+    private var settings: Settings = Settings.init(colorTheme: ColorTheme.Dark)!
+    private var colorManager = ColorManager.sharedInstance
+
+    private var isFirstTime = true
+    private var firstNumber = 0.0
+    private var operation = ""
+    private var isUserTypingNumber = false
     
-    @IBOutlet weak var calculatorDisplay: UILabel!
-    @IBOutlet weak var menuButton: UIButton!
-    
-    var colorManager = ColorManager.sharedInstance
-    
-    var isTypingNumber = false
-    var isFirstTime = true
-    var firstNumber = 0.0
-    var operation = ""
+    private var brain = CalculatorBrain()
     
     /* All Buttons: */
-    @IBOutlet weak var acButton: ArithmeticButton!
-    @IBOutlet weak var posNegButton: ArithmeticButton!
-    @IBOutlet weak var percentageButton: ArithmeticButton!
-    @IBOutlet weak var divisionButton: ArithmeticButton!
+    @IBOutlet private var calculatorButtons: [UIButton]!
+    @IBOutlet private weak var equalsButton: UIButton!
+    @IBOutlet private weak var menuButton: UIButton!
     
-    @IBOutlet weak var sevenButton: NumericalButton!
-    @IBOutlet weak var eightButton: NumericalButton!
-    @IBOutlet weak var nineButton: NumericalButton!
-    @IBOutlet weak var multiplyButton: ArithmeticButton!
-    
-    @IBOutlet weak var fourButton: NumericalButton!
-    @IBOutlet weak var fiveButton: NumericalButton!
-    @IBOutlet weak var sixButton: NumericalButton!
-    @IBOutlet weak var minusButton: ArithmeticButton!
-    
-    @IBOutlet weak var oneButton: NumericalButton!
-    @IBOutlet weak var twoButton: NumericalButton!
-    @IBOutlet weak var threeButton: NumericalButton!
-    @IBOutlet weak var plusButton: ArithmeticButton!
-    
-    @IBOutlet weak var decimalButton: NumericalButton!
-    @IBOutlet weak var zeroButton: NumericalButton!
-    @IBOutlet weak var equalsButton: UIButton!
+    /** Double value of calculatorDisplay.
+     when I grab it will represent the calculatorDisplay as a double.
+     when I set it, it will convert the set Double into a string. */
+    private var displayValue: Double {
+        /// get calculatorDisplay double value
+        get {
+            return Double(calculatorDisplay.text!)!
+        }
+        /// set calculatorDisplay value of the current double
+        set {
+            calculatorDisplay.text = String(newValue)
+        }
+    }
 
+    // MARK: - View
+    
     override func viewDidLoad() {
         if let savedSettings = loadSettings() {
             settings = savedSettings
@@ -73,194 +68,62 @@ class MainScreenViewController: UIViewController {
         menuButton.backgroundColor = backgroundColor
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        
-        // Load default settings.
-        self.settings = Settings.init(colorTheme: ColorTheme.Dark)!
-        
-        super.init(coder: aDecoder)
-    }
-    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
     
-    // MARK: Actions
+    // MARK: - Actions
 
-    @IBAction func numberTapped(sender: UIButton) {
+    @IBAction private func numberTapped(sender: UIButton) {
         // Get number from button.
-        let number = sender.currentTitle
+        let number = sender.currentTitle!
         
-        if isTypingNumber {
+        print("digit \(number) pressed")
+        
+        if isUserTypingNumber {
             // Add number to calculator display
-            calculatorDisplay.text = calculatorDisplay.text! + number!
+            calculatorDisplay.text = calculatorDisplay.text! + number
         } else {
             // New batch of numbers
-            calculatorDisplay.text = number!
-            isTypingNumber = true
+            calculatorDisplay.text = number
         }
-    }
-
-    @IBAction func arithmeticTapped(sender: UIButton) {
-        // User has clicked an arathmetic button: (+ - x ÷).
-        isTypingNumber = false
         
-        if isFirstTime {
-            operation = sender.currentTitle!
-            firstNumber = getDouble()
-            isFirstTime = false
-        } else {
-            calculate()
-            operation = sender.currentTitle!
-        }
+        isUserTypingNumber = true
     }
     
-    @IBAction func clearTapped(sender: UIButton) {
-        // Clear the calculator screen.
-        reset()
-    }
-
-    @IBAction func equalsTapped(sender: UIButton) {
-        
-        // Do nothing if the screen does not contain any numbers.
-        if !containsNumbers() { return }
-        
-        // User has clicked the equals button.
-        isTypingNumber = false
-        
-        calculate()
-        
-        isFirstTime = true
-        
-        setDouble(firstNumber)
-    }
-    
-    @IBAction func decimalTapped(sender: AnyObject) {
-        if calculatorDisplay.text!.rangeOfString(".") != nil && !isTypingNumber {
-            // Do nothing if there is already a decimal.
-            return
+    @IBAction private func performOperation(sender: UIButton) {
+        if isUserTypingNumber {
+            brain.setOperand(displayValue)
+            isUserTypingNumber = false
         }
         
-        if calculatorDisplay.text!.isEmpty {
-            calculatorDisplay.text = "0."
-        } else {
-            calculatorDisplay.text = calculatorDisplay.text! + "."
-        }
-    }
-    
-    @IBAction func posNegTapped(sender: UIButton) {
-        // Switch between positive and negative value.
-        
-        isTypingNumber = true
-        
-        // Do noemptything if the screen is .
-        if calculatorDisplay.text!.isEmpty {
-            calculatorDisplay.text = "-"
-            return
+        if let mathmaticalSymbol = sender.currentTitle {
+            brain.performOperation(mathmaticalSymbol)
         }
         
-        let tempString: String = calculatorDisplay.text!
-        
-        if tempString.containsString("-") {
-            // Set positive.
-            calculatorDisplay.text = (tempString as NSString).substringFromIndex(1)
-        } else {
-            // Set negative.
-            calculatorDisplay.text = "-" + tempString
-        }
+        displayValue = brain.result
     }
-    
-    @IBAction func percentageTapped(sender: AnyObject) {
-        
-        var double: Double
-        
-        // Do nothing if the screen does not contain any numbers.
-        if !containsNumbers() { return }
-        
-        double = getDouble() / 100
-        
-        setDouble(double)
-    }
-    
     
     @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
         
         // When comming back from the settings.
         if sender.sourceViewController is SettingsViewController {
+            print("updating ui")
             updateUI()
         }
     }
     
     
-    // MARK: Helper functions
+    // MARK: - Helper functions
     
-    private func calculate() {
-        var results = 0.0
-        
-        let secondNumber = getDouble()
-        
-        switch operation {
-        case "+":
-            results = firstNumber + secondNumber
-        case "-":
-            results = firstNumber - secondNumber
-        case "x":
-            results = firstNumber * secondNumber
-        case "÷":
-            results = firstNumber / secondNumber
-        default:
-            break
-        }
-        
-        print(firstNumber, operation, secondNumber, " = ", results)
-        
-        if results.isFinite {
-            setDouble(results)
-        } else {
-            results = 0
-            calculatorDisplay.text = ""
-        }
-        
-        firstNumber = results
-    }
-    
-    /// Returns true if calculatorDisplay contains any numbers.
-    private func containsNumbers() -> Bool {
-        
-        let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
-        let decimalRange = calculatorDisplay.text!.rangeOfCharacterFromSet(decimalCharacters, options: NSStringCompareOptions(), range: nil)
-        
-        if decimalRange == nil {
-            return false
-        }
-        
-        return true
-    }
-    
-    /// Get the double value displayed on the calculatorDisplay.
-    private func getDouble() -> Double {
-        
-        if calculatorDisplay.text!.isEmpty {
-            return 0
-        } else {
-            return Double(calculatorDisplay.text!)!
-        }
-    }
-    
-    /// Set the calculatorDisplay text to the given double.
-    private func setDouble(double: Double) {
-        
-        calculatorDisplay.text = String(double)
-    }
-    
-    /// Reset current calculator state.
-    private func reset() {
-        calculatorDisplay.text = ""
-        isTypingNumber = false
-        isFirstTime = true
-        firstNumber = 0.0
-    }
+//    /// Reset current calculator state.
+//    private func reset() {
+//        calculatorDisplay.text = ""
+//        isUserTypingNumber = false
+//        isFirstTime = true
+//        firstNumber = 0.0
+//    }
 
     /// Redraw your labels, update your UIElements, do what you have to do
     private func updateUI() {
@@ -270,35 +133,7 @@ class MainScreenViewController: UIViewController {
     
     /// Redraw all 5 rows of buttons
     private func redrawButtons() {
-        
-        //        let arrayButtons: [UIButton] = [acButton, posNegButton, percentageButton, divisionButton,
-        //                                        sevenButton, eightButton, nineButton, multiplyButton,
-        //                                        fourButton, fiveButton, sixButton, minusButton,
-        //                                        oneButton, twoButton, threeButton, plusButton,
-        //                                        decimalButton, zeroButton, equalsButton]
-        var arrayButtons = [UIButton]()
-        
-        arrayButtons.append(acButton)
-        arrayButtons.append(posNegButton)
-        arrayButtons.append(percentageButton)
-        arrayButtons.append(divisionButton)
-        arrayButtons.append(sevenButton)
-        arrayButtons.append(eightButton)
-        arrayButtons.append(nineButton)
-        arrayButtons.append(multiplyButton)
-        arrayButtons.append(fourButton)
-        arrayButtons.append(fiveButton)
-        arrayButtons.append(sixButton)
-        arrayButtons.append(minusButton)
-        arrayButtons.append(oneButton)
-        arrayButtons.append(twoButton)
-        arrayButtons.append(threeButton)
-        arrayButtons.append(plusButton)
-        arrayButtons.append(decimalButton)
-        arrayButtons.append(zeroButton)
-        arrayButtons.append(equalsButton)
-        
-        for button: UIButton in arrayButtons {
+        for button: UIButton in calculatorButtons {
             button.setNeedsDisplay()
         }
     }
@@ -310,9 +145,7 @@ class MainScreenViewController: UIViewController {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(settings, toFile: Settings.ArchiveURL.path!)
         
         if !isSuccessfulSave {
-            
             print("Failed to save settings")
-            
         }
     }
     

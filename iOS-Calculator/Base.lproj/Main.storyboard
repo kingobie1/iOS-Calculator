@@ -25,7 +25,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="206" y="181" width="144" height="21"/>
                                 </variation>
                             </label>
@@ -44,6 +44,9 @@
                                                 <exclude reference="fgP-Xn-Wag"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="fgP-Xn-Wag"/>
@@ -52,9 +55,6 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcy-Q6-bzH"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-3V-lc7" userLabel="Pos Neg Button" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="32" y="0.0" width="30" height="36"/>
@@ -68,6 +68,9 @@
                                                 <exclude reference="7vE-Fr-vv6"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="32" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="7vE-Fr-vv6"/>
@@ -77,7 +80,7 @@
                                             <rect key="frame" x="33" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="posNegTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b6b-Gv-dyD"/>
+                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qPH-FF-zeS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dZ-OA-kgG" userLabel="Percentage Button" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -92,6 +95,9 @@
                                                 <exclude reference="CSK-Tc-Ehx"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="64" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="CSK-Tc-Ehx"/>
@@ -101,7 +107,7 @@
                                             <rect key="frame" x="66" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="percentageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I3s-rt-RT8"/>
+                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y1Z-aU-6oJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-4H-914" customClass="ArithmeticButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -116,6 +122,9 @@
                                                 <exclude reference="SqY-4c-ZNk"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="96" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="SqY-4c-ZNk"/>
@@ -125,10 +134,13 @@
                                             <rect key="frame" x="99" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TUF-71-hp6"/>
+                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e6s-Qw-Jxd"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="307" width="126" height="36"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="108" y="306" width="129" height="30"/>
                                 </variation>
@@ -172,6 +184,9 @@
                                                 <exclude reference="t56-CJ-3dJ"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="32" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="t56-CJ-3dJ"/>
@@ -196,6 +211,9 @@
                                                 <exclude reference="Fln-Wn-jBO"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="64" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="Fln-Wn-jBO"/>
@@ -214,11 +232,14 @@
                                             <constraint firstAttribute="width" secondItem="Wsk-jN-IKd" secondAttribute="height" multiplier="1:1" id="fFq-Hd-18S"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="x"/>
+                                        <state key="normal" title="×"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="fFq-Hd-18S"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="96" y="0.0" width="30" height="36"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
@@ -229,7 +250,7 @@
                                             <rect key="frame" x="99" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8b-r3-sAf"/>
+                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf9-Fr-htG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -251,6 +272,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="Jxq-AA-x3U"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
@@ -276,6 +300,9 @@
                                                 <exclude reference="9cm-q8-15F"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="32" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="9cm-q8-15F"/>
@@ -299,6 +326,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="m3V-xU-xyB"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="64" y="0.0" width="30" height="36"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
@@ -324,6 +354,9 @@
                                                 <exclude reference="02j-Kb-ihZ"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="96" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="02j-Kb-ihZ"/>
@@ -333,10 +366,13 @@
                                             <rect key="frame" x="99" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpl-dH-hqf"/>
+                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wr6-f6-y4v"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="382" width="126" height="36"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="108" y="382" width="129" height="30"/>
                                 </variation>
@@ -355,6 +391,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="jF9-ec-VXu"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
@@ -380,6 +419,9 @@
                                                 <exclude reference="LdV-ZW-cpA"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="32" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="LdV-ZW-cpA"/>
@@ -403,6 +445,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="qO8-MY-ukq"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="64" y="0.0" width="30" height="36"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
@@ -428,6 +473,9 @@
                                                 <exclude reference="zAq-M3-FJh"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="96" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="zAq-M3-FJh"/>
@@ -437,7 +485,7 @@
                                             <rect key="frame" x="99" y="0.0" width="30" height="30"/>
                                         </variation>
                                         <connections>
-                                            <action selector="arithmeticTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dt-VB-Dd7"/>
+                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncP-j1-wxF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -460,6 +508,9 @@
                                                 <exclude reference="Bow-Ml-pAc"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="Bow-Ml-pAc"/>
@@ -468,9 +519,6 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="decimalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppC-On-6VL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-EV-I3J" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="32" y="0.0" width="30" height="36"/>
@@ -483,6 +531,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="OMr-zW-xGm"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="32" y="0.0" width="30" height="36"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
@@ -497,6 +548,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="108" y="459" width="62" height="36"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="108" y="458" width="96" height="30"/>
                                 </variation>
@@ -508,7 +562,7 @@
                                     <rect key="frame" x="66" y="0.0" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="equalsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTL-Q7-FJx"/>
+                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KnA-44-wOp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMZ-nP-dzb" customClass="MenuButton" customModule="iOS_Calculator" customModuleProvider="target">
@@ -635,27 +689,28 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="acButton" destination="437-6Z-Nw8" id="X5c-pP-Ggd"/>
                         <outlet property="calculatorDisplay" destination="dzv-t9-xN1" id="MxY-rp-fZP"/>
-                        <outlet property="decimalButton" destination="hij-gk-S2C" id="1Xd-eq-VOo"/>
-                        <outlet property="divisionButton" destination="JEa-4H-914" id="7EO-Xl-S7R"/>
-                        <outlet property="eightButton" destination="zhk-0b-Y5Y" id="txt-wp-juj"/>
                         <outlet property="equalsButton" destination="qRg-iS-mfl" id="jR5-iO-h6b"/>
-                        <outlet property="fiveButton" destination="ihM-Ck-UfL" id="icz-9J-bLh"/>
-                        <outlet property="fourButton" destination="To4-XB-5Lp" id="xUa-fB-iEX"/>
                         <outlet property="menuButton" destination="ZMZ-nP-dzb" id="0v3-Ja-jHw"/>
-                        <outlet property="minusButton" destination="9EU-af-F2r" id="tkD-8X-msg"/>
-                        <outlet property="multiplyButton" destination="Wsk-jN-IKd" id="152-U2-XDJ"/>
-                        <outlet property="nineButton" destination="x9O-U6-aPC" id="z0b-BT-Lag"/>
-                        <outlet property="oneButton" destination="6YU-Ok-dEG" id="n8s-a9-Xko"/>
-                        <outlet property="percentageButton" destination="3dZ-OA-kgG" id="bEW-JQ-TYY"/>
-                        <outlet property="plusButton" destination="cni-rO-y0k" id="Sm5-c1-7Xd"/>
-                        <outlet property="posNegButton" destination="Wic-3V-lc7" id="FbU-qC-4v6"/>
-                        <outlet property="sevenButton" destination="Ue4-cI-Vc0" id="5h9-pe-XZK"/>
-                        <outlet property="sixButton" destination="7DS-MS-mbq" id="PnD-dS-DjU"/>
-                        <outlet property="threeButton" destination="VaY-2T-7q4" id="JvS-jA-OJD"/>
-                        <outlet property="twoButton" destination="FlY-n9-6q6" id="Ldw-Mc-wHW"/>
-                        <outlet property="zeroButton" destination="hsV-EV-I3J" id="ONS-bk-Qi6"/>
+                        <outletCollection property="calculatorButtons" destination="Ue4-cI-Vc0" collectionClass="NSMutableArray" id="1od-Ad-NWO"/>
+                        <outletCollection property="calculatorButtons" destination="zhk-0b-Y5Y" collectionClass="NSMutableArray" id="qNm-mC-vKD"/>
+                        <outletCollection property="calculatorButtons" destination="x9O-U6-aPC" collectionClass="NSMutableArray" id="OOl-3P-7sQ"/>
+                        <outletCollection property="calculatorButtons" destination="To4-XB-5Lp" collectionClass="NSMutableArray" id="4aN-YZ-MPT"/>
+                        <outletCollection property="calculatorButtons" destination="ihM-Ck-UfL" collectionClass="NSMutableArray" id="wDk-Qu-Tnv"/>
+                        <outletCollection property="calculatorButtons" destination="7DS-MS-mbq" collectionClass="NSMutableArray" id="4hE-dk-5be"/>
+                        <outletCollection property="calculatorButtons" destination="6YU-Ok-dEG" collectionClass="NSMutableArray" id="yHj-k6-QOG"/>
+                        <outletCollection property="calculatorButtons" destination="FlY-n9-6q6" collectionClass="NSMutableArray" id="s0Y-Gc-msH"/>
+                        <outletCollection property="calculatorButtons" destination="VaY-2T-7q4" collectionClass="NSMutableArray" id="nNp-vp-gRL"/>
+                        <outletCollection property="calculatorButtons" destination="hsV-EV-I3J" collectionClass="NSMutableArray" id="iEi-Vj-O5C"/>
+                        <outletCollection property="calculatorButtons" destination="437-6Z-Nw8" collectionClass="NSMutableArray" id="E8S-5c-U6e"/>
+                        <outletCollection property="calculatorButtons" destination="Wic-3V-lc7" collectionClass="NSMutableArray" id="qi5-iC-Yr6"/>
+                        <outletCollection property="calculatorButtons" destination="3dZ-OA-kgG" collectionClass="NSMutableArray" id="5I3-Gi-qIp"/>
+                        <outletCollection property="calculatorButtons" destination="JEa-4H-914" collectionClass="NSMutableArray" id="WCa-og-FlN"/>
+                        <outletCollection property="calculatorButtons" destination="Wsk-jN-IKd" collectionClass="NSMutableArray" id="Rcb-iN-gIv"/>
+                        <outletCollection property="calculatorButtons" destination="9EU-af-F2r" collectionClass="NSMutableArray" id="awb-yJ-n4d"/>
+                        <outletCollection property="calculatorButtons" destination="cni-rO-y0k" collectionClass="NSMutableArray" id="8WR-or-UCV"/>
+                        <outletCollection property="calculatorButtons" destination="qRg-iS-mfl" collectionClass="NSMutableArray" id="WAf-qE-y8C"/>
+                        <outletCollection property="calculatorButtons" destination="hij-gk-S2C" collectionClass="NSMutableArray" id="t3a-6P-M9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
