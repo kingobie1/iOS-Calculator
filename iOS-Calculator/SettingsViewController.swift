@@ -14,7 +14,6 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var statusBarBlock: UIView!
-    @IBOutlet weak var changeThemeButton: UIButton!
     
     var colorManager = ColorManager.sharedInstance
     
@@ -27,7 +26,6 @@ class SettingsViewController: UIViewController {
         
         super.viewDidLoad()
 
-        changeThemeButton.setTitleColor(textColor, forState: UIControlState.Normal)
         statusBarBlock.backgroundColor = statusBlockColor
         navBar.tintColor = textColor
         navBar.barTintColor = navColor
@@ -46,11 +44,16 @@ class SettingsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func changeColorTheme(sender: AnyObject) {
-        colorManager.switchColorTheme()
+    
+    @IBAction func selectDarkTheme(sender: UIButton) {
+        colorManager.setColorTheme(ColorTheme.Dark)
         viewDidLoad()
     }
     
+    @IBAction func selectLightTheme(sender: UIButton) {
+        colorManager.setColorTheme(ColorTheme.Light)
+        viewDidLoad()
+    }
 
     // MARK: - Navigation
 

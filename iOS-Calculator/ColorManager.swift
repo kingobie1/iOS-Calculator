@@ -36,7 +36,7 @@ class ColorManager {
     }
     
     /// Alternates the colorScheme.
-    func switchColorTheme() {
+    func alternateColorTheme() {
         if colorTheme == ColorTheme.Dark {
             colorTheme = ColorTheme.Light
         } else {
