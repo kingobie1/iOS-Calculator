@@ -44,21 +44,14 @@ class SettingsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    @IBAction func selectDarkTheme(sender: UIButton) {
-        colorManager.setColorTheme(ColorTheme.Dark)
-        viewDidLoad()
-    }
-    
-    @IBAction func selectLightTheme(sender: UIButton) {
-        colorManager.setColorTheme(ColorTheme.Light)
-        viewDidLoad()
+    /// Select the color theme of the coresponding button
+    @IBAction func colorThemeSelected(sender: UIButton) {
+        if let colorTheme = ColorTheme( rawValue: sender.titleLabel!.text! ) {
+            colorManager.setColorTheme( colorTheme )
+            viewDidLoad()
+        }
     }
 
-    @IBAction func selectBlueTheme(sender: AnyObject) {
-        colorManager.setColorTheme(ColorTheme.StepChampion)
-        viewDidLoad()
-    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

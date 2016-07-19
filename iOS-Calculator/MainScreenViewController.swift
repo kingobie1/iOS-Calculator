@@ -16,8 +16,6 @@ class MainScreenViewController: UIViewController {
     private var settings: Settings = Settings.init(colorTheme: ColorTheme.Dark)!
     private var colorManager = ColorManager.sharedInstance
 
-    private var isFirstTime = true
-    private var firstNumber = 0.0
     private var operation = ""
     private var isUserTypingNumber = false
     
@@ -54,7 +52,7 @@ class MainScreenViewController: UIViewController {
         let backgroundColor = colorManager.getColor(ColorType.Background)
         let textColor = colorManager.getColor(ColorType.Text)
         let equalsButtonColor = colorManager.getColor(ColorType.EqualButton)
-        let highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        let highlightColor = colorManager.getColor(ColorType.Background)
         
         super.viewDidLoad()
         
@@ -105,6 +103,13 @@ class MainScreenViewController: UIViewController {
         displayValue = brain.result
     }
     
+    @IBAction func clearScreen(sender: AnyObject) {
+        calculatorDisplay.text = ""
+        isUserTypingNumber = false
+        brain.clearCalc()
+    }
+    
+    
     @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
         
         // When comming back from the settings.
@@ -116,14 +121,6 @@ class MainScreenViewController: UIViewController {
     
     
     // MARK: - Helper functions
-    
-//    /// Reset current calculator state.
-//    private func reset() {
-//        calculatorDisplay.text = ""
-//        isUserTypingNumber = false
-//        isFirstTime = true
-//        firstNumber = 0.0
-//    }
 
     /// Redraw your labels, update your UIElements, do what you have to do
     private func updateUI() {

@@ -19,7 +19,7 @@ class ArithmeticButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         buttonColor = colorManager.getColor(ColorType.ArithmeticButton)
-        highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        highlightColor = colorManager.getColor(ColorType.Background)
         textColor = colorManager.getColor(ColorType.Text)
         
         super.init(coder: aDecoder)
@@ -47,7 +47,7 @@ class ArithmeticButton: UIButton {
     /// Set colors.
     private func initColor() {
         buttonColor = colorManager.getColor(ColorType.ArithmeticButton)
-        highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        highlightColor = colorManager.getColor(ColorType.Background)
         textColor = colorManager.getColor(ColorType.Text)
     }
 }
