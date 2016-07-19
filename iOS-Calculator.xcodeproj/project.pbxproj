@@ -12,7 +12,6 @@
 		E0369DFA1CF75E5600D752C3 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369DF91CF75E5600D752C3 /* MenuButton.swift */; };
 		E0369DFC1CF766DC00D752C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */; };
 		E0369E021CF77D2600D752C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E011CF77D2600D752C3 /* Settings.swift */; };
-		E0369E081CF77E6000D752C3 /* ColorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0369E071CF77E6000D752C3 /* ColorDetails.swift */; };
 		E04462441D3969E900F1215A /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04462411D3969E900F1215A /* HockeySDK.framework */; };
 		E04462451D3969E900F1215A /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E04462431D3969E900F1215A /* HockeySDKResources.bundle */; };
 		E064BCFF1CF7B5D3008D7E70 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */; };
@@ -44,7 +43,6 @@
 		E0369DF91CF75E5600D752C3 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		E0369DFB1CF766DC00D752C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E0369E011CF77D2600D752C3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		E0369E071CF77E6000D752C3 /* ColorDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDetails.swift; sourceTree = "<group>"; };
 		E04462411D3969E900F1215A /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		E04462431D3969E900F1215A /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			children = (
 				E0BF607E1CFE39260066700A /* Color.swift */,
 				E064BCFE1CF7B5D3008D7E70 /* ColorManager.swift */,
-				E0369E071CF77E6000D752C3 /* ColorDetails.swift */,
 				E0D875D61CF52FCE002CCCA6 /* UIColorExtension.swift */,
 			);
 			name = Utilities;
@@ -313,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0369E081CF77E6000D752C3 /* ColorDetails.swift in Sources */,
 				E064BCFF1CF7B5D3008D7E70 /* ColorManager.swift in Sources */,
 				E0D875D11CF4EF9E002CCCA6 /* NumericalButton.swift in Sources */,
 				E0D875B11CF4E1CE002CCCA6 /* MainScreenViewController.swift in Sources */,

@@ -19,8 +19,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         let backgroundColor = colorManager.getColor(ColorType.Background)
-        let statusBlockColor = colorManager.getColor(ColorType.StatusBarBlock)
-        let navColor = colorManager.getColor(ColorType.Default)
+        let statusBlockColor = colorManager.getColor(ColorType.EqualButton)
+        let navColor = colorManager.getColor(ColorType.EqualButton)
         let textColor = colorManager.getColor(ColorType.Text)
 //        let buttonColor = colorManager.getColor(ColorType.ArithmeticButton)
         
@@ -44,15 +44,12 @@ class SettingsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    @IBAction func selectDarkTheme(sender: UIButton) {
-        colorManager.setColorTheme(ColorTheme.Dark)
-        viewDidLoad()
-    }
-    
-    @IBAction func selectLightTheme(sender: UIButton) {
-        colorManager.setColorTheme(ColorTheme.Light)
-        viewDidLoad()
+    /// Select the color theme of the coresponding button
+    @IBAction func colorThemeSelected(sender: UIButton) {
+        if let colorTheme = ColorTheme( rawValue: sender.titleLabel!.text! ) {
+            colorManager.setColorTheme( colorTheme )
+            viewDidLoad()
+        }
     }
 
     // MARK: - Navigation

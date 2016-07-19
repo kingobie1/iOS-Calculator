@@ -20,7 +20,7 @@ class NumericalButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         buttonColor = colorManager.getColor(ColorType.NumericalButton)
-        highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        highlightColor = colorManager.getColor(ColorType.Background)
         textColor = colorManager.getColor(ColorType.Text)
         
         super.init(coder: aDecoder)
@@ -49,7 +49,7 @@ class NumericalButton: UIButton {
     /// Set colors.
     private func initColor() {
         buttonColor = colorManager.getColor(ColorType.NumericalButton)
-        highlightColor = colorManager.getColor(ColorType.ButtonHighlight)
+        highlightColor = colorManager.getColor(ColorType.Background)
         textColor = colorManager.getColor(ColorType.Text)
     }
 }
