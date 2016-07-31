@@ -522,6 +522,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="decimalTyped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="32D-XF-3Ms"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-EV-I3J" customClass="NumericalButton" customModule="iOS_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="32" y="0.0" width="30" height="36"/>
