@@ -21,7 +21,8 @@ class CalculatorBrain {
         "e": Operation.Constant(M_E),
         "cos": Operation.UnaryOperation(cos),
         "√": Operation.UnaryOperation(sqrt),
-//        ".": Operation.Constant( return Double(String(Double).append(".")) ),
+//        ".": Operation.UnaryOperation({ Double(String($0).append(".")) }),
+        ".": Operation.BinaryOperation({ $0 + ($1 / 10) }),
         "+/-": Operation.UnaryOperation({ -$0 }),
         "%": Operation.UnaryOperation({ $0 / 100 }),
         "×": Operation.BinaryOperation({ $0 * $1 }),
@@ -78,6 +79,11 @@ class CalculatorBrain {
     func clearCalc() {
         pending = nil
         accumulator = 0.0
+    }
+    
+    func addDecimalPlace() -> Double {
+        
+        return 0.0
     }
 }
 

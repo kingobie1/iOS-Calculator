@@ -109,6 +109,22 @@ class MainScreenViewController: UIViewController {
         brain.clearCalc()
     }
     
+    @IBAction func decimalTyped(sender: UIButton) {
+        if !calculatorDisplay.text!.containsString(".") {
+            if isUserTypingNumber {
+                // Add number to calculator display
+                calculatorDisplay.text = calculatorDisplay.text! + "."
+            } else {
+                // New batch of numbers
+                calculatorDisplay.text = "."
+            }
+        }
+        
+        isUserTypingNumber = true
+    }
+    
+    
+    
     
     @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
         
