@@ -43,6 +43,7 @@ class MainScreenViewController: UIViewController {
     // MARK: - View
     
     override func viewDidLoad() {
+        
         if let savedSettings = loadSettings() {
             settings = savedSettings
             colorManager.setColorTheme(savedSettings.colorTheme)
@@ -64,11 +65,26 @@ class MainScreenViewController: UIViewController {
         equalsButton.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
         equalsButton.setTitleColor(equalsButtonColor, forState: UIControlState.Normal)
         menuButton.backgroundColor = backgroundColor
+        menuButton.setBackgroundImage(Color.imageWithColor(backgroundColor), forState: UIControlState.Highlighted)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        if settings.colorTheme == ColorTheme.Light {
+            return UIStatusBarStyle.Default
+        } else {
+            return UIStatusBarStyle.LightContent
+        }
     }
+    
+    override func awakeFromNib() {
+        if let savedSettings = loadSettings() {
+            settings = savedSettings
+        }
+    }
+    
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
     
     
     // MARK: - Actions

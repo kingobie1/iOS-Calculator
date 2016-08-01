@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController {
     var colorManager = ColorManager.sharedInstance
     
     override func viewDidLoad() {
+        
         let backgroundColor = colorManager.getColor(ColorType.Background)
         let statusBlockColor = colorManager.getColor(ColorType.EqualButton)
         let navColor = colorManager.getColor(ColorType.EqualButton)
@@ -36,6 +37,14 @@ class SettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        if colorManager.getColorTheme() == ColorTheme.Light {
+            return UIStatusBarStyle.Default
+        } else {
+            return UIStatusBarStyle.LightContent
+        }
     }
     
     // MARK: Actions

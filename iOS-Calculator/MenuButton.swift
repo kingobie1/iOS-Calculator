@@ -31,5 +31,4 @@ class MenuButton: UIButton {
         // Drawing code
     }
 
-
 }

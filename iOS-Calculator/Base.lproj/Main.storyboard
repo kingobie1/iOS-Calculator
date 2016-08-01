@@ -582,7 +582,8 @@
                                         <exclude reference="MV8-pE-Hb1"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="2" y="22" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="MV8-pE-Hb1"/>
                                     </mask>
@@ -617,6 +618,7 @@
                             <constraint firstItem="2Uu-Ex-Mcy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dCr-oc-7QO"/>
                             <constraint firstItem="u4T-yx-pI9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dES-dT-pHS"/>
                             <constraint firstItem="aUp-gp-mWU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dmz-WT-p9T"/>
+                            <constraint firstItem="ZMZ-nP-dzb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.08" id="j4A-py-fGB"/>
                             <constraint firstItem="dzv-t9-xN1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="0.5" id="jAM-ZU-Qgo"/>
                             <constraint firstItem="QA7-rZ-SdJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jgL-Ba-yCd"/>
                             <constraint firstItem="hij-gk-S2C" firstAttribute="top" secondItem="VsO-XW-3Sz" secondAttribute="bottom" constant="8" id="jn0-TN-C6Y">
@@ -637,10 +639,7 @@
                             <mask key="constraints">
                                 <exclude reference="4Lz-PZ-5iG"/>
                                 <exclude reference="JsM-3f-gG0"/>
-                                <exclude reference="09l-Sp-IKw"/>
-                                <exclude reference="Pof-2j-45n"/>
-                                <exclude reference="W7b-wq-1Xh"/>
-                                <exclude reference="y9w-K6-4ul"/>
+                                <exclude reference="j4A-py-fGB"/>
                                 <exclude reference="7Ej-37-kuP"/>
                                 <exclude reference="jAM-ZU-Qgo"/>
                                 <exclude reference="5FU-Cq-g07"/>
@@ -657,6 +656,10 @@
                                 <exclude reference="VFn-cC-bQL"/>
                                 <exclude reference="dmz-WT-p9T"/>
                                 <exclude reference="jn0-TN-C6Y"/>
+                                <exclude reference="09l-Sp-IKw"/>
+                                <exclude reference="Pof-2j-45n"/>
+                                <exclude reference="W7b-wq-1Xh"/>
+                                <exclude reference="y9w-K6-4ul"/>
                                 <exclude reference="MYJ-4T-DmC"/>
                                 <exclude reference="nFm-My-NOv"/>
                             </mask>
@@ -669,10 +672,7 @@
                             <mask key="constraints">
                                 <include reference="4Lz-PZ-5iG"/>
                                 <include reference="JsM-3f-gG0"/>
-                                <include reference="09l-Sp-IKw"/>
-                                <include reference="Pof-2j-45n"/>
-                                <include reference="W7b-wq-1Xh"/>
-                                <include reference="y9w-K6-4ul"/>
+                                <include reference="j4A-py-fGB"/>
                                 <include reference="7Ej-37-kuP"/>
                                 <include reference="jAM-ZU-Qgo"/>
                                 <include reference="5FU-Cq-g07"/>
@@ -689,6 +689,10 @@
                                 <include reference="VFn-cC-bQL"/>
                                 <include reference="dmz-WT-p9T"/>
                                 <include reference="jn0-TN-C6Y"/>
+                                <include reference="09l-Sp-IKw"/>
+                                <include reference="Pof-2j-45n"/>
+                                <include reference="W7b-wq-1Xh"/>
+                                <include reference="y9w-K6-4ul"/>
                                 <include reference="MYJ-4T-DmC"/>
                                 <include reference="nFm-My-NOv"/>
                             </mask>
