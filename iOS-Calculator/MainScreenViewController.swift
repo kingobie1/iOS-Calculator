@@ -68,13 +68,13 @@ class MainScreenViewController: UIViewController {
         menuButton.setBackgroundImage(Color.imageWithColor(backgroundColor), forState: UIControlState.Highlighted)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        if settings.colorTheme == ColorTheme.Light {
-            return UIStatusBarStyle.Default
-        } else {
-            return UIStatusBarStyle.LightContent
-        }
-    }
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        if settings.colorTheme == ColorTheme.Light {
+//            return UIStatusBarStyle.Default
+//        } else {
+//            return UIStatusBarStyle.LightContent
+//        }
+//    }
     
     override func awakeFromNib() {
         if let savedSettings = loadSettings() {
@@ -82,10 +82,10 @@ class MainScreenViewController: UIViewController {
         }
     }
     
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true
-//    }
-    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
     
     // MARK: - Actions
 
