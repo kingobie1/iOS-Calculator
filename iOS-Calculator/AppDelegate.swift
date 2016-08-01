@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-//        application.statusBarHidden = true
         
         BITHockeyManager.sharedHockeyManager().configureWithIdentifier("3200252c8acb4c54b6a32fd5d9039abb")
         // Do some additional configuration if needed here

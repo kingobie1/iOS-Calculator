@@ -13,31 +13,18 @@ class NumericalButton: UIButton {
     // Mark: Properties
     var colorManager = ColorManager.sharedInstance
     let screenSize: CGRect = UIScreen.mainScreen().bounds
-    var buttonColor: UIColor
-    var highlightColor: UIColor
-    var textColor: UIColor
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        buttonColor = colorManager.getColor(ColorType.NumericalButton)
-        highlightColor = colorManager.getColor(ColorType.Background)
-        textColor = colorManager.getColor(ColorType.Text)
-        
-        super.init(coder: aDecoder)
-        
-        self.setBackgroundImage(Color.imageWithColor(buttonColor), forState: UIControlState.Normal)
-        self.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
+    var buttonColor: UIColor?
+    var highlightColor: UIColor?
+    var textColor: UIColor?
 
-        self.setTitleColor(textColor, forState: UIControlState.Normal)
-    }
     
     override func setNeedsDisplay() {
         super.setNeedsDisplay()
         
         initColor()
         
-        self.setBackgroundImage(Color.imageWithColor(buttonColor), forState: UIControlState.Normal)
-        self.setBackgroundImage(Color.imageWithColor(highlightColor), forState: UIControlState.Highlighted)
+        self.setBackgroundImage(Color.imageWithColor(buttonColor!), forState: UIControlState.Normal)
+        self.setBackgroundImage(Color.imageWithColor(highlightColor!), forState: UIControlState.Highlighted)
         
         self.setTitleColor(textColor, forState: UIControlState.Normal)
 
